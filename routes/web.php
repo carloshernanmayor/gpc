@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+
+
+Route::get('imprimir','App\Http\Controllers\PdfController@imprimirPosible_cliente')->name('id_posible_cliente');
+
 Route::resource('posiblecliente', 'App\Http\Controllers\posibleclienteController');
 Route::resource('vendedor', 'App\Http\Controllers\vendedorController');
-

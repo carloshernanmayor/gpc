@@ -20,6 +20,7 @@
     <!-- Custom styles for this template -->
     
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet"href="{{public_path('css/sb-admin-2.min.css')}}">
 
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
@@ -84,7 +85,7 @@
                 <a class="nav-link" href="/vendedor">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Vendedores</span></a>
-            </li>
+            </li>           
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
