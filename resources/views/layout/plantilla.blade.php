@@ -85,6 +85,11 @@
                 <a class="nav-link" href="/vendedor">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Vendedores</span></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/productoservicio">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Producto y/o servicio</span></a>
             </li>           
 
             <!-- Divider -->
