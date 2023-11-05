@@ -24,3 +24,4 @@ Route::get('imprimir','App\Http\Controllers\PdfController@imprimirPosible_client
 
 Route::resource('posiblecliente', 'App\Http\Controllers\posibleclienteController');
 Route::resource('vendedor', 'App\Http\Controllers\vendedorController');
+Route::resource('producto_servicio', 'App\Http\Controllers\producto_servicioController');
