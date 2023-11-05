@@ -8,11 +8,10 @@ use Illuminate\Support\Facades\Redirect;
 
 class vendedorController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct() {
+         $this->middleware('auth'); 
+        }
+
     public function index(){
         $vendedor=vendedor::orderBy('id_vendedor','DESC')->paginate(10);
         //dd('$poscliente');
@@ -25,8 +24,9 @@ class vendedorController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $request->user()->authorizeRoles('admin');
         return view ('vendedores.create');
     }
 

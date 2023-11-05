@@ -24,3 +24,15 @@ Route::get('imprimir','App\Http\Controllers\PdfController@imprimirPosible_client
 
 Route::resource('posiblecliente', 'App\Http\Controllers\posibleclienteController');
 Route::resource('vendedor', 'App\Http\Controllers\vendedorController');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
