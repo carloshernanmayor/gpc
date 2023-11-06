@@ -9,7 +9,7 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\Models\Role;
-
+use Image;
 class RegisterController extends Controller
 {
     /*
@@ -65,6 +65,10 @@ class RegisterController extends Controller
      */
     
         protected function create(array $data) { 
+
+            $avatar = $data['avatar']; $filename = time() . '.' . $avatar->getClientOriginalExtension(); Image::make($avatar)->resize(300, 300)->save( public_path('/uploads/avatars/' . $filename) ); $user = User::create([ 'name' => $data['name'], 'email' => $data['email'],
+'password' => bcrypt($data['password']), 'avatar' => $filename,]);
+
             $user = User::create([ 'name' => $data['name'], 'email' => $data['email'], 'password' => bcrypt($data['password']), ]); $user ->roles() ->attach(Role::where('name', 'user')->first());
             return $user;
             }

@@ -12,6 +12,7 @@
 <button class="btn btn-success">Crear posible cliente</button> </a>
 
 
+
 <a href="{{url('imprimirposiblecliente')}}" class="pull-right"><button class="btn btn-success">Imprimir Pdf</button> </a> 
 
 

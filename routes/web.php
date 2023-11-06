@@ -29,3 +29,15 @@ Route::resource('posiblecliente', 'App\Http\Controllers\posibleclienteController
 Route::resource('vendedor', 'App\Http\Controllers\vendedorController');
 Route::resource('productoservicio', 'App\Http\Controllers\productoservicioController');
 Route::resource('marketing', 'App\Http\Controllers\marketingController');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
