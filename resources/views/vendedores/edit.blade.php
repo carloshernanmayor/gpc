@@ -51,7 +51,7 @@ value="{{$vendedor->contraseña}}">
 <button class="btn btn-primary" type="submit"><span class="glyphicon glyphiconrefresh"></
 span> Actualizar
 </button>
-<a class="btn btn-info" type="reset" href="{{url('persona')}}">
+<a class="btn btn-info" type="reset" href="{{url('vendedor')}}">
 <span class="glyphicon glyphicon-home"></span> Regresar </a>
 </div>
 </div>

@@ -10,6 +10,9 @@
 <div class="col-md-9">
    <a href="{{url('vendedor/create')}}" class="pull-right">
 <button class="btn btn-success">Crear vendedor</button> </a>
+
+<a href="{{url('imprimirvendedor')}}" class="pull-right"><button class="btn btn-success">Imprimir Pdf</button> </a> 
+
 </div></div>
 <div class="row">
 <div class="table-responsive">

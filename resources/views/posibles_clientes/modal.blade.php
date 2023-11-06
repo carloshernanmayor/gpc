@@ -12,7 +12,7 @@ Close"></button>
 <p>Confirme si desea Eliminar La Persona</p>
 </div>
 <div class="modal-footer">
-<button type="button" class="btn btn-secondary" data-bsdismiss="modal">Cerrar</button>
+<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
 <button type="submit" class="btn btn-primary">Confirmar</button>
 </div>
 </div>

@@ -25,7 +25,8 @@ class productoservicioController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(){
+    public function create()
+    {
         return view ('producto_servicio.create');
     }
 
@@ -41,9 +42,11 @@ class productoservicioController extends Controller
         $posproductoservicio->nombre=$request->get('nombre');
         $posproductoservicio->descripcion=$request->get('descripcion');                                                            
         $posproductoservicio->precio=$request->get('precio');
-        $posproductoservicio->tipo=$request->get('tipo');                                   
+        $posproductoservicio->tipo=$request->get('tipo');
         $posproductoservicio->save();
-        return Redirect::to('producto_servicio');
+
+        
+        return Redirect::to('productoservicio');
     }
 
     /**
@@ -63,10 +66,10 @@ class productoservicioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($ide){
+    public function edit($id){
 
-        $posproductoservicio=producto_servicio::findOrFail($ide);
-        return view("producto_servicio.edit",["posproducto_servicio"=>$posproductoservicio]);
+        $posproductoservicio=producto_servicio::findOrFail($id);
+        return view("producto_servicio.edit",["posproductoservicio"=>$posproductoservicio]);
     }
 
     /**
@@ -76,14 +79,15 @@ class productoservicioController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id){
+    public function update(Request $request, $id)
+    {
         $posproductoservicio=producto_servicio::findOrFail($id);
         $posproductoservicio->nombre=$request->get('nombre');
         $posproductoservicio->descripcion=$request->get('descripcion');                                                            
         $posproductoservicio->precio=$request->get('precio');
         $posproductoservicio->tipo=$request->get('tipo'); 
         $posproductoservicio->update();
-        return Redirect::to('producto_servicio');
+        return Redirect::to('productoservicio');
         
     }
 
@@ -94,8 +98,8 @@ class productoservicioController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-       $productoservicio=producto_servicio::findOrFail($id);
-       $productoservicio->delete();
-       return Redirect::to('producto_servicio');
+       $posproductoservicio=producto_servicio::findOrFail($id);
+       $posproductoservicio->delete();
+       return Redirect::to('productoservicio');
     }
 }
