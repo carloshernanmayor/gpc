@@ -42,9 +42,7 @@ class vendedorController extends Controller
         $vendedor->nombre=$request->get('nombre');
         $vendedor->identificacion=$request->get('identificacion');                                                            
         $vendedor->telefono=$request->get('telefono');
-        $vendedor->direccion=$request->get('direccion');
-        $vendedor->correo=$request->get('correo');
-        $vendedor->contraseña=$request->get('contraseña');                                               
+        $vendedor->correo=$request->get('correo');                                          
         $vendedor->save();
         return Redirect::to('vendedor');
     }
@@ -84,7 +82,6 @@ class vendedorController extends Controller
         $vendedor=vendedor::findOrFail($id);
         $vendedor->identificacion=$request->get('identificacion');
         $vendedor->nombre=$request->get('nombre');
-        $vendedor->direccion=$request->get('direccion');
         $vendedor->correo=$request->get('correo');
         $vendedor->telefono=$request->get('telefono');
         $vendedor->update();

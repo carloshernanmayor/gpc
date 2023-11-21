@@ -78,7 +78,12 @@
                     <p align="center"><img src= "{{ asset('image/marketing.png') }}" alt="marketing" width="70" height="70"></p>
                     <p align="center"><span>Tipo de marketing</span></p>
                 </a>
-            </li>            
+            </li>   
+            <li class="nav-item active">
+                <a class="nav-link" href="/atencion" style="color: #000000">
+                    <p align="center"><span>atenciones</span></p>
+                </a>
+            </li>          
 
             <!-- Divider -->
             <hr class="sidebar-divider d-none d-md-block">
@@ -140,7 +145,7 @@
                                     Activity Log
                                 </a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="#" action="/logout" method="POST" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
                                 </a>

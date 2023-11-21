@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\posible_cliente;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\Atencion;
 
 class posibleclienteController extends Controller
 {
@@ -46,6 +47,13 @@ class posibleclienteController extends Controller
         
         $posclientes->save();
         return Redirect::to('posiblecliente');
+        
+        $newPosibleClienteId = $posclientes->id_posible_cliente;
+
+    // Crear un registro en la otra tabla y asignar la clave primaria de posible_cliente
+        $otratencion = new atencion;
+        $otratencion-> id_posible_cliente = $newPosibleClienteId;
+        $otraatencion->save();
     }
 
     /**
@@ -69,7 +77,7 @@ class posibleclienteController extends Controller
 
         $poscliente=posible_cliente::findOrFail($ide);
         return view("posibles_clientes.edit",["poscliente"=>$poscliente]);
-    }
+    } 
 
     /**
      * Update the specified resource in storage.

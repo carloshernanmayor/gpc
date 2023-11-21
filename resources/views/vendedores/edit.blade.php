@@ -27,11 +27,6 @@ value="{{$vendedor->identificacion}}">
 <input type="text" name="nombre" id="nombre" class="form-control"
 value="{{$vendedor->nombre}}">
 </div>
-<div class="col-4">
-<label for="direccion" class="form-label">direccion</label>
-<input type="text" name="direccion" id="direccion" class="form-control"
-value="{{$vendedor->direccion}}">
-</div>
 <div class="col-6">
 <label for="correo" class="form-label">correo</label>
 <input type="text" name="correo" id="correo" class="form-control"
@@ -41,11 +36,6 @@ value="{{$vendedor->correo}}">
 <label for="telefono" class="form-label">Telefono</label>
 <input type="text" name="telefono" id="telefono" class="form-control"
 value="{{$vendedor->telefono}}">
-</div>
-<div class="col-md-6">
-<label for="contraseña" class="form-label">Contraseña</label>
-<input type="text" name="contraseña" id="contraseña" class="form-control"
-value="{{$vendedor->contraseña}}">
 </div>
 <div class="col-12">
 <button class="btn btn-primary" type="submit"><span class="glyphicon glyphiconrefresh"></

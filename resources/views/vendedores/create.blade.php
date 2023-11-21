@@ -34,13 +34,7 @@ placeholder="Digite el número Documento">
 placeholder="Nombre Completo">
 </div>
 </div>
-<div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
-<div class="form-group">
-<label for="direccion">Direccion</label>
-<input type="text" name="direccion" id="direccion" class="form-control"
-placeholder="Direccion">
-</div>
-</div>
+
 <div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
 <div class="form-group">
 <label for="correo">Email</label>
@@ -53,13 +47,6 @@ placeholder="Correo Electrónico">
 <label for="telefono">Telefono</label>
 <input type="text" name="telefono" id="telefono" class="form-control"
 placeholder="Telefono"> 
-</div>
-</div>
-<div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
-<div class="form-group">
-<label for="contraseña">Contraseña</label>
-<input type="text" name="contraseña" id="contraseña" class="form-control"
-placeholder="contraseña"> 
 </div>
 </div>
 <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">

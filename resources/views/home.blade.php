@@ -213,10 +213,16 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login">Logout</a>
+                <form action="{{ route('logout') }}" method="post" style="display: inline;">
+    @csrf
+    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal" onclick="event.preventDefault(); this.closest('form').submit();">
+        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+        Logout
+    </a>
+</form>
+
+<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            
                 </div>
             </div>
         </div>

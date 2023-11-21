@@ -23,9 +23,8 @@
 <th>nombre</th>
 <th>identificacion</th>
 <th>telefono</th>
-<th>direccion</th>+
 <th>correo</th>
-<th>contraseña</th>
+
 
 </thead>
 <tbody>
@@ -35,9 +34,8 @@
 <td>{{ $pos->nombre }}</td>
 <td>{{ $pos->identificacion}}</td>
 <td>{{ $pos->telefono }}</td>
-<td>{{ $pos->direccion}}</td>
 <td>{{ $pos->correo }}</td>
-<td>{{ $pos->contraseña }}</td>
+
 <td>
 <a href="{{URL::action('App\Http\Controllers\vendedorController@edit',$pos->id_vendedor)}}"><button class="btn btn-primary">Actualizar</button></a>
 <a href="" data-toggle="modal" data-target="#modal-delete-{{$pos->id_vendedor}}">
