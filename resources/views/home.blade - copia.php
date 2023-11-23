@@ -20,7 +20,6 @@
     <!-- Custom styles for this template -->
     
     <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
-    <link href="{{ asset('css/gpc.css') }}" rel="stylesheet">
     <link rel="stylesheet"href="{{public_path('css/sb-admin-2.min.css')}}">
 
     <!-- Custom styles for this page -->
@@ -35,37 +34,69 @@
     <!-- Page Wrapper -->
     <div id="wrapper">
 
+        <!-- Sidebar -->
+        <ul style="background-color:#51039E" class="navbar-nav sidebar sidebar-dark accordion" id="accordionSidebar">
 
+            <!-- Sidebar - Brand -->
+            <a class=" d-flex align-items-center justify-content-center" href="posiblecliente" style="background-color: #0000FF!important">
+                <div >
+                    <img src= "{{ asset('image/gpc_ico.png') }}" alt="gpc" width="100" height="100" style="margin:10px">
+                </div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+
+            <!-- Heading -->
+
+
+            <!-- Nav Item - Pages Collapse Menu -->
+
+
+            <!-- Nav Item - Tables -->
+            <li class="nav-item active">
+                <a class="nav-link" href="/posiblecliente" style="color: #000000">
+                    <p align="center"><img src= "{{ asset('image/posible_cliente.png') }}" alt="posible_cliente" width="70" height="70"></p>
+                    <p align="center"><span>Posibles clientes</span></p>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/vendedor" style="color: #000000">
+                    <p align="center"><img src= "{{ asset('image/vendedor.png') }}" alt="vendedor" width="70" height="70"></p>
+                    <p align="center"><span>Vendedores</span></p>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/productoservicio" style="color: #000000">
+                    <p align="center"><img src= "{{ asset('image/productoservicio.png') }}" alt="producto_servicio" width="70" height="70"></p>
+                    <p align="center"><span>Producto y/o servicio</span></p>
+                </a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="/marketing" style="color: #000000">
+                    <p align="center"><img src= "{{ asset('image/marketing.png') }}" alt="marketing" width="70" height="70"></p>
+                    <p align="center"><span>Tipo de marketing</span></p>
+                </a>
+            </li>            
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+
+
+        </ul>
+        <!-- End of Sidebar -->
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column" style="background-color:#613d97">
+        <div id="content-wrapper" class="d-flex flex-column" style="background-color:#330066">
 
             <!-- Main Content -->
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow encabezado">
-                <div >
-                    <img src= "{{ asset('image/gpc_ico.png') }}" alt="gpc" width="100" height="100" style="margin:10px">
-                </div>
-                
-                <a class="nav-link botonGPC" href="/posiblecliente" style="color: #000000">
-                    <p align="center"><img src= "{{ asset('image/posible_cliente.png') }}" alt="posible_cliente" width="70" height="70"></p>
-                    <p align="center"><span>Posibles clientes</span></p>
-                </a>
-                <a class="nav-link botonGPC" href="/vendedor" style="color: #000000">
-                    <p align="center"><img src= "{{ asset('image/vendedor.png') }}" alt="vendedor" width="70" height="70"></p>
-                    <p align="center"><span>Vendedores</span></p>
-                </a>
-                <a class="nav-link botonGPC" href="/productoservicio" style="color: #000000">
-                    <p align="center"><img src= "{{ asset('image/productoservicio.png') }}" alt="producto_servicio" width="70" height="70"></p>
-                    <p align="center"><span>Producto y/o servicio</span></p>
-                </a>
-                <a class="nav-link botonGPC" href="/marketing" style="color: #000000">
-                    <p align="center"><img src= "{{ asset('image/marketing.png') }}" alt="marketing" width="70" height="70"></p>
-                    <p align="center"><span>Tipo de marketing</span></p>
-                </a>
-                
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" style="height: 120px; background-color: #0000FF!important">
+
                     <!-- Sidebar Toggle (Topbar) -->
 
 
@@ -109,10 +140,10 @@
                                     <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Activity Log
                                 </a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                <a class="dropdown-item" href="login" data-toggle="modal" data-target="#logoutModal">
                                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                     Logout
+                                </a>
                                 </a>
                             </div>
                         </li>
@@ -123,10 +154,10 @@
                 <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid tablasGPC">
+                <div class="container-fluid">
 
                     <!-- Page Heading -->
-                     <h1 class="h3 mb-2">
+                     <h1 class="h3 mb-2 text-gray-800">
                         @yield('titulo')
                      </h1>
                     
@@ -182,10 +213,16 @@
                         <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-                <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                <form action="{{ route('logout') }}" method="post" style="display: inline;">
+    @csrf
+    <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal" onclick="event.preventDefault(); this.closest('form').submit();">
+        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+        Logout
+    </a>
+</form>
+
+<button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                            
                 </div>
             </div>
         </div>
