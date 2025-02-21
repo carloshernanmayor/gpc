@@ -10,6 +10,6 @@ class producto_servicio extends Model
 use HasFactory;
 protected $fillable = ['nombre','descripcion','precio','tipo'];
 public $timestamps = false;
-protected $primaryKey='id_producto_servicio ';
+protected $primaryKey='id_producto_servicio';
 protected $table='producto_servicio';
 }

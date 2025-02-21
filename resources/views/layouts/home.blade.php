@@ -56,7 +56,7 @@
 
             <!-- Nav Item - Tables -->
             <li class="nav-item active">
-                <a class="nav-link" href="/posiblecliente" style="color: #000000">
+                <a class="nav-link" href="/posible_vendedor" style="color: #000000">
                     <p align="center"><img src= "{{ asset('image/posible_cliente.png') }}" alt="posible_cliente" width="70" height="70"></p>
                     <p align="center"><span>Posibles clientes</span></p>
                 </a>
@@ -68,7 +68,7 @@
                 </a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="/productoservicio" style="color: #000000">
+                <a class="nav-link" href="/" style="color: #000000">
                     <p align="center"><img src= "{{ asset('image/productoservicio.png') }}" alt="producto_servicio" width="70" height="70"></p>
                     <p align="center"><span>Producto y/o servicio</span></p>
                 </a>

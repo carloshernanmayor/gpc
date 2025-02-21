@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Gestion de posibles clientes</title>
+    <title>Gestion de clientes</title>
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
@@ -49,7 +49,7 @@
                     <img src= "{{ asset('image/gpc_ico.png') }}" alt="gpc" width="100" height="100" style="margin:10px">
                 </div>
                 
-                <a class="nav-link botonGPC" href="/posiblecliente" style="color: #000000">
+                <a class="nav-link botonGPC"  style="color: #000000">
                     <p align="center"><img src= "{{ asset('image/posible_cliente.png') }}" alt="posible_cliente" width="70" height="70"></p>
                     <p align="center"><span>Posibles clientes</span></p>
                 </a>
@@ -90,7 +90,7 @@
                         <li class="nav-item dropdown no-arrow">
                             <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline  small"  style="color: #000000">Douglas McGee</span>
+                                <span class="mr-2 d-none d-lg-inline  small"  style="color: #000000">{{ auth()->user()->name }}</span>
                                 <img class="img-profile rounded-circle"
                                     src="img/undraw_profile.svg">
                             </a>
@@ -185,7 +185,7 @@
                 <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-                    <a class="btn btn-primary" href="login.html">Logout</a>
+                    <a class="btn btn-primary" href="/login">Logout</a>
                 </div>
             </div>
         </div>

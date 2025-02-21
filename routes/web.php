@@ -24,7 +24,6 @@ Route::get('imprimirposiblecliente','App\Http\Controllers\PdfController@imprimir
 Route::get('imprimirvendedor','App\Http\Controllers\PdfController@imprimirVendedor')->name('id_vendedor');
 Route::get('imprimirproductoservicio','App\Http\Controllers\PdfController@imprimirProductoServicio')->name('id_producto_servicio');
 Route::get('imprimirmarketing','App\Http\Controllers\PdfController@imprimirMarketing')->name('id_marketing');
-
 Route::resource('posiblecliente', 'App\Http\Controllers\posibleclienteController');
 Route::resource('vendedor', 'App\Http\Controllers\vendedorController');
 Route::resource('productoservicio', 'App\Http\Controllers\productoservicioController');
