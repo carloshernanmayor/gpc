@@ -13,7 +13,7 @@
     </head>
     <body class="antialiased">
     <div class="logo" >
-                    <img src= "{{ asset('image/gpc.png') }}" alt="gpc" width="500" height="500" style="margin:10px">
+                    <img src= "{{ asset('image/acuerdo (2).png') }}" alt="gpc" width="100" height="100" style="margin:10px">
                 </div>
         <div class="relative flex  justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
@@ -22,10 +22,6 @@
                         <a href="{{ url('/home') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Home</a>
                     @else
                         <a href="{{ route('login') }}" class="boton-ingresar">Ingresar</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="boton-ingresar">Registrar</a>
-                        @endif
                     @endauth
                 </div>
             @endif

@@ -46,7 +46,7 @@
                 <!-- Topbar -->
                 <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow encabezado">
                 <div >
-                    <img src= "{{ asset('image/gpc_ico.png') }}" alt="gpc" width="100" height="100" style="margin:10px">
+                    <img src= "{{ asset('image/acuerdo (2).png') }}" alt="gpc" width="80" height="80" style="margin:10px">
                 </div>
                 
                 <a class="nav-link botonGPC"  style="color: #000000">
