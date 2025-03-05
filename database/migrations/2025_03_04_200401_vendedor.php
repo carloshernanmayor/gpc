@@ -31,6 +31,6 @@ class Vendedor extends Migration
      */
     public function down()
     {
-     Schema::dropifexits('vendedor');
+     Schema::dropIfExists('vendedor');
     }
 }

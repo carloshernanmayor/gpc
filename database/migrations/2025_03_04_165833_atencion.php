@@ -32,6 +32,6 @@ class Atencion extends Migration
      */
     public function down()
     {
-        Schema::dropifexits('atencion');
+        Schema::dropIfExists('atencion');
     }
 }

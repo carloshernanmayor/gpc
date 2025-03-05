@@ -25,7 +25,7 @@
 <th>id atencion</th>
 <th>id vendedor</th>
 <th>id posible cliente</th>
-<th>id detalle productos de interes</th>
+<th>descripcion</th>
 
 
 </thead>
@@ -35,7 +35,7 @@
 <td>{{ $atencion->id_atencion }}</td>
 <td>{{ $atencion->id_vendedor }}  </td>
 <td>{{ $atencion->id_cliente}}</td>
-<td>{{ $atencion->id_detalle_productos_de_interes }}</td>
+<td>{{ $atencion->descripcion }}</td>
 
 @endforeach
 
