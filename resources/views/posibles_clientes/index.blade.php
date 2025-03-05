@@ -1,7 +1,7 @@
 @extends('layout.plantilla')
 
 @section('titulo')
-   Posibles clientes
+   Clientes
 @endsection('titulo')
 
 @section('contenido')
@@ -33,15 +33,15 @@
 <tbody>
 @foreach($poscliente as $pos)
 <tr>
-<td>{{ $pos->id_posible_cliente }}</td>
+<td>{{ $pos->id_cliente }}</td>
 <td>{{ $pos->nombre }}</td>
 <td>{{ $pos->identificacion}}</td>
 <td>{{ $pos->telefono }}</td>
 <td>{{ $pos->direccion}}</td>
 <td>{{ $pos->correo }}</td>
 <td>
-<a href="{{URL::action('App\Http\Controllers\posibleclienteController@edit',$pos->id_posible_cliente)}}"><button class="btn btn-primary">Actualizar</button></a>
-<a href="" data-toggle="modal" data-target="#modal-delete-{{$pos->id_posible_cliente}}">
+<a href="{{URL::action('App\Http\Controllers\posibleclienteController@edit',$pos->id_cliente)}}"><button class="btn btn-primary">Actualizar</button></a>
+<a href="" data-toggle="modal" data-target="#modal-delete-{{$pos->id_cliente}}">
 <button type="button" class="btn btn-danger"> Eliminar</button>
 </a>
 </td>

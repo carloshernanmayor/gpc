@@ -14,7 +14,7 @@
 @endif
 </div>
 </div>
-{{Form::open(array('action'=>array('App\Http\Controllers\posibleclienteController@update', $poscliente->id_posible_cliente),'method'=>'patch'))}}
+{{Form::open(array('action'=>array('App\Http\Controllers\posibleclienteController@update', $poscliente->id_cliente),'method'=>'patch'))}}
 <div class="row g-3">
 <div class="col-md-4">
 <label for="identificacion" class="form-label">identificacion</label>

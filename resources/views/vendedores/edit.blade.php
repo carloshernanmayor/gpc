@@ -37,6 +37,11 @@ value="{{$vendedor->correo}}">
 <input type="text" name="telefono" id="telefono" class="form-control"
 value="{{$vendedor->telefono}}">
 </div>
+<div class="col-md-4">
+<label for="direccion" class="form-label">Direccion</label>
+<input type="text" name="direccion" id="direccion" class="form-control"
+value="{{$vendedor->direccion}}">
+</div>
 <div class="col-12">
 <button class="btn btn-primary" type="submit"><span class="glyphicon glyphiconrefresh"></
 span> Actualizar

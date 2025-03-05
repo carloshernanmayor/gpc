@@ -15,7 +15,7 @@ class posibleclienteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $poscliente=posible_cliente::orderBy('id_posible_cliente','DESC')->paginate(10);
+        $poscliente=posible_cliente::orderBy('id_cliente','ASC')->paginate(10);
         //dd('$poscliente');
         return view('posibles_clientes.index',compact('poscliente'));
 
@@ -48,12 +48,12 @@ class posibleclienteController extends Controller
         $posclientes->save();
         return Redirect::to('posiblecliente');
         
-        $newPosibleClienteId = $posclientes->id_posible_cliente;
+        $newPosibleClienteId = $posclientes->id_cliente;
 
     // Crear un registro en la otra tabla y asignar la clave primaria de posible_cliente
-        $otratencion = new atencion;
-        $otratencion-> id_posible_cliente = $newPosibleClienteId;
-        $otraatencion->save();
+        // $otratencion = new atencion;
+        // $otratencion-> id_posible_cliente = $newPosibleClienteId;
+        // $otraatencion->save();
     }
 
     /**

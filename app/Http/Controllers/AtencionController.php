@@ -16,7 +16,7 @@ class AtencionController extends Controller
     public function index()
     {
         
-            $aten=Atencion::orderBy('id_atencion','DESC')->paginate(10);
+            $aten=Atencion::orderBy('id_atencion','ASC')->paginate(10);
             return view('Atencion.index',compact('aten'));
     
         

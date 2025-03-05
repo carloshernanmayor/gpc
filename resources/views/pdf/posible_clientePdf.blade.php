@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Posibles clientes</h3>
+    <h3>Clientes</h3>
 
     <div class="row">
 <div class="col-md-12 col-xs-12">
@@ -23,7 +23,7 @@
 <tbody>
 @foreach($posible_cliente as $pos)
 <tr>
-<td>{{ $pos->id_posible_cliente }}</td>
+<td>{{ $pos->id_cliente }}</td>
 <td>{{ $pos->nombre }}</td>
 <td>{{ $pos->identificacion}}</td>
 <td>{{ $pos->telefono }}</td>

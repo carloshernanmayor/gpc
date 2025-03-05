@@ -48,6 +48,12 @@ placeholder="Correo Electrónico">
 <input type="text" name="telefono" id="telefono" class="form-control"
 placeholder="Telefono"> 
 </div>
+<div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
+<div class="form-group">
+<label for="direccion">Direccion</label>
+<input type="text" name="direccion" id="direccion" class="form-control"
+placeholder="Direccion"> 
+</div>
 </div>
 <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
 <div class="form-group"> <br>

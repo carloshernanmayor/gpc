@@ -10,6 +10,6 @@ class posible_cliente extends Model
 use HasFactory;
 protected $fillable = ['nombre','identificacion','telefono','direccion','correo'];
 public $timestamps = false;
-protected $primaryKey='id_posible_cliente';
-protected $table='posible_cliente';
+protected $primaryKey='id_cliente';
+protected $table='cliente';
 }

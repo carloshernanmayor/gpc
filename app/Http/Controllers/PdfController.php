@@ -13,8 +13,8 @@ class PdfController extends Controller
 {
     public function imprimirPosibleCliente(Request $request)
 {
-$posible_cliente=posible_cliente::orderBy('id_posible_cliente','ASC')->get();
-$pdf = \PDF::loadView('pdf.posible_clientePDF',['posible_cliente' => $posible_cliente ]);
+$cliente=posible_cliente::orderBy('id_cliente','ASC')->get();
+$pdf = \PDF::loadView('pdf.posible_clientePDF',['posible_cliente' => $cliente ]);
 $pdf->setPaper('carta', 'A4');
 return $pdf->stream();
 }

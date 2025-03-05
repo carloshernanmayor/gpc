@@ -14,7 +14,7 @@ class vendedorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $vendedor=vendedor::orderBy('id_vendedor','DESC')->paginate(10);
+        $vendedor=vendedor::orderBy('id_vendedor','ASC')->paginate(10);
         //dd('$poscliente');
         return view('vendedores.index',compact('vendedor'));
 
@@ -42,7 +42,8 @@ class vendedorController extends Controller
         $vendedor->nombre=$request->get('nombre');
         $vendedor->identificacion=$request->get('identificacion');                                                            
         $vendedor->telefono=$request->get('telefono');
-        $vendedor->correo=$request->get('correo');                                          
+        $vendedor->correo=$request->get('correo');
+        $vendedor->direccion=$request->get('direccion');                                           
         $vendedor->save();
         return Redirect::to('vendedor');
     }

@@ -19,7 +19,7 @@
 <td>Telefono</td>
 <td>Direccion</td>
 <td>Correo</td>
-<td>Contraseña</td>
+
 </thead>
 <tbody>
 @foreach($vendedor as $pos)
@@ -30,7 +30,6 @@
 <td>{{ $pos->telefono }}</td>
 <td>{{ $pos->direccion}}</td>
 <td>{{ $pos->correo }}</td>
-<td>{{ $pos->contraseña }}</td>
 <td>
 @endforeach
 </tbody>
