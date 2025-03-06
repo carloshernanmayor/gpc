@@ -104,5 +104,4 @@ class vendedorController extends Controller
         return Redirect::to('vendedor');
      }
 
-     
-}
+    }

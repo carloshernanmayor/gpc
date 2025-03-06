@@ -20,4 +20,10 @@ public function cliente(): BelongsTo
     return $this->belongsTo(posible_cliente::class);
 }
 
+public function vendedor(): BelongsTo
+{
+    return $this->belongsTo(vendedor::class);
+}
+
+
 }

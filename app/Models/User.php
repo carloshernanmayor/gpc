@@ -40,7 +40,7 @@ class User extends Authenticatable
 
     public function vendedor()
 {
-    return $this->hasOne(Vendedor::class, 'user_id', 'id');
+    return $this->hasOne(Vendedor::class, 'user_id');
 }
 
 
