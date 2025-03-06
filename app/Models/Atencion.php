@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Atencion extends Model
 {
@@ -12,4 +13,11 @@ class Atencion extends Model
     public $timestamps = true;
     protected $primaryKey='id_atencion';
     protected $table='atencion';
+
+
+public function cliente(): BelongsTo
+{
+    return $this->belongsTo(posible_cliente::class);
+}
+
 }

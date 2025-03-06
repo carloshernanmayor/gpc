@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\vendedor;
 use Illuminate\Support\Facades\Redirect;
+use App\Models\User;
 
 class vendedorController extends Controller
 {
@@ -102,4 +103,6 @@ class vendedorController extends Controller
         $vendedor->delete();
         return Redirect::to('vendedor');
      }
+
+     
 }
