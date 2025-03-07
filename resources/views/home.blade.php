@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-            <a class="nav-link botonGPC" href="posiblecliente" style="color: #000000">
+            <a class="nav-link botonGPC" href="cliente" style="color: #000000">
                     <p align="center"><img src= "{{ asset('image/posible_cliente.png') }}" alt="posible_cliente" width="70" height="70"></p>
                     <p align="center"><span>Clientes</span></p>
                 </a>

@@ -1,6 +1,6 @@
-<div class="modal fade" id="modal-delete-{{$pos->id_cliente}}" tabindex="-1" arialabelledby="
+<div class="modal fade" id="modal-delete-{{$cliente->id_cliente}}" tabindex="-1" arialabelledby="
 ModalLabel" aria-hidden="true">
-{{Form::Open(array('action'=>array('App\Http\Controllers\posibleclienteController@destroy',$pos->id_cliente),'method'=>'delete'))}}
+{{Form::Open(array('action'=>array('App\Http\Controllers\clienteController@destroy',$cliente->id_cliente),'method'=>'delete'))}}
 <div class="modal-dialog">
 <div class="modal-content">
 <div class="modal-header">

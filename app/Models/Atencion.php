@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Atencion extends Model
 {
     use HasFactory;
-    protected $fillable = ['id_atencion','id_vendedor','id_posible_cliente','descripcion'];
+    protected $fillable = ['id_atencion','id_vendedor','id_cliente','descripcion'];
     public $timestamps = true;
     protected $primaryKey='id_atencion';
     protected $table='atencion';
@@ -17,7 +17,7 @@ class Atencion extends Model
 
 public function cliente(): BelongsTo
 {
-    return $this->belongsTo(posible_cliente::class);
+    return $this->belongsTo(cliente::class);
 }
 
 public function vendedor(): BelongsTo

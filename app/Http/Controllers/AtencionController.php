@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Atencion;
 use App\Models\vendedor;
-use App\Models\posible_cliente;
+use App\Models\cliente;
 use Illuminate\Support\Facades\Redirect;
 
 class AtencionController extends Controller
@@ -90,14 +90,4 @@ class AtencionController extends Controller
         //
     }
 
-    public function showClientes($atencionId)
-    {
-        // Find the 'Atencion' record
-        $atencion = Atencion::findOrFail($id_atencion);
-        
-        $clientes = $atencion->posible_cliente()->where('id_vendedor', 1)->get();
-        
-        // Pass data to the view
-        return view('Atencion.index', compact('clientes'));
-    }
 }

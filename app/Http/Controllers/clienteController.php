@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\posible_cliente;
+use App\Models\cliente;
 use Illuminate\Support\Facades\Redirect;
 use App\Models\Atencion;
 
-class posibleclienteController extends Controller
+class clienteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,13 +16,12 @@ class posibleclienteController extends Controller
      */
     public function index(){
 
-        // $atend = Atencion::where('id_vendedor', auth()->user()->id_vendedor)->get(); 
 $atend = Atencion::where('id_vendedor', auth()->user()->id_vendedor)->pluck('id_cliente'); 
 
-// Use `whereIn()` to filter `posible_cliente`
-$poscliente = posible_cliente::whereIn('id_cliente', $atend)->orderBy('id_cliente', 'ASC')->paginate(10);
+$clientes =cliente::whereIn('id_cliente', $atend)->orderBy('id_cliente', 'ASC')->paginate(10);
 
-  return view('posibles_clientes.index', compact('poscliente'));
+return view('clientes.index', compact('clientes'));
+
     }
 
     /**
@@ -31,7 +30,7 @@ $poscliente = posible_cliente::whereIn('id_cliente', $atend)->orderBy('id_client
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        return view ('posibles_clientes.create');
+        return view ('clientes.create');
     }
 
     /**
@@ -42,17 +41,17 @@ $poscliente = posible_cliente::whereIn('id_cliente', $atend)->orderBy('id_client
      */
     public function store(Request $request)
     {
-        $posclientes=new posible_cliente;
-        $posclientes->nombre=$request->get('nombre');
-        $posclientes->identificacion=$request->get('identificacion');                                                            
-        $posclientes->telefono=$request->get('telefono');
-        $posclientes->direccion=$request->get('direccion');
-        $posclientes->correo=$request->get('correo');                                               
+        $clientes=new cliente;
+        $clientes->nombre=$request->get('nombre');
+        $clientes->identificacion=$request->get('identificacion');                                                            
+        $clientes->telefono=$request->get('telefono');
+        $clientes->direccion=$request->get('direccion');
+        $clientes->correo=$request->get('correo');                                               
         
-        $posclientes->save();
-        return Redirect::to('posiblecliente');
+        $clientes->save();
+        return Redirect::to('cliente');
         
-        $newPosibleClienteId = $posclientes->id_cliente;
+        $newClienteId = $clientes->id_cliente;
 
     // Crear un registro en la otra tabla y asignar la clave primaria de posible_cliente
         // $otratencion = new atencion;
@@ -79,8 +78,8 @@ $poscliente = posible_cliente::whereIn('id_cliente', $atend)->orderBy('id_client
      */
     public function edit($ide){
 
-        $poscliente=posible_cliente::findOrFail($ide);
-        return view("posibles_clientes.edit",["poscliente"=>$poscliente]);
+        $cliente=cliente::findOrFail($ide);
+        return view("clientes.edit",["cliente"=>$cliente]);
     } 
 
     /**
@@ -91,14 +90,14 @@ $poscliente = posible_cliente::whereIn('id_cliente', $atend)->orderBy('id_client
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id){
-        $poscliente=posible_cliente::findOrFail($id);
-        $poscliente->identificacion=$request->get('identificacion');
-        $poscliente->nombre=$request->get('nombre');
-        $poscliente->direccion=$request->get('direccion');
-        $poscliente->correo=$request->get('correo');
-        $poscliente->telefono=$request->get('telefono');
-        $poscliente->update();
-        return Redirect::to('posiblecliente');
+        $cliente=cliente::findOrFail($id);
+        $cliente->identificacion=$request->get('identificacion');
+        $cliente->nombre=$request->get('nombre');
+        $cliente->direccion=$request->get('direccion');
+        $cliente->correo=$request->get('correo');
+        $cliente->telefono=$request->get('telefono');
+        $cliente->update();
+        return Redirect::to('cliente');
         
     }
 
@@ -109,8 +108,8 @@ $poscliente = posible_cliente::whereIn('id_cliente', $atend)->orderBy('id_client
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-       $posiblesclientes=posible_cliente::findOrFail($id);
-       $posiblesclientes->delete();
-       return Redirect::to('posiblecliente');
+       $clientes=cliente::findOrFail($id);
+       $clientes->delete();
+       return Redirect::to('cliente');
     }
 }

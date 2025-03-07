@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\posible_cliente;
+use App\Models\cliente;
 use App\Models\vendedor;
 use App\Models\producto_servicio;
 use App\Models\marketing;
@@ -11,10 +11,10 @@ use pdf;
 
 class PdfController extends Controller
 {
-    public function imprimirPosibleCliente(Request $request)
+    public function imprimirCliente(Request $request)
 {
-$cliente=posible_cliente::orderBy('id_cliente','ASC')->get();
-$pdf = \PDF::loadView('pdf.posible_clientePDF',['posible_cliente' => $cliente ]);
+$cliente=cliente::orderBy('id_cliente','ASC')->get();
+$pdf = \PDF::loadView('pdf.clientePDF',['cliente' => $cliente ]);
 $pdf->setPaper('carta', 'A4');
 return $pdf->stream();
 }

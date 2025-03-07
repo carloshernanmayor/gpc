@@ -14,7 +14,7 @@ class ClienteSeeder extends Seeder
      */
     public function run()
     {
-        $cliente=new posible_cliente();
+        $cliente=new cliente();
         $cliente->nombre='Miguel angel orejuela';
         $cliente->identificacion='2345321349';
         $cliente->telefono='3276789098';
@@ -23,7 +23,7 @@ class ClienteSeeder extends Seeder
 
         $cliente->save();
 
-        $cliente2 = new posible_cliente();
+        $cliente2 = new cliente();
         $cliente2->nombre = 'Juan Pérez';
         $cliente2->identificacion = '8765432190';
         $cliente2->telefono = '3001234567';
@@ -31,7 +31,7 @@ class ClienteSeeder extends Seeder
         $cliente2->correo = 'juanperez@gmail.com';
         $cliente2->save();
 
-        $cliente3 = new posible_cliente();
+        $cliente3 = new cliente();
         $cliente3->nombre = 'Carlos Ramírez';
         $cliente3->identificacion = '9876543210';
         $cliente3->telefono = '3124567890';

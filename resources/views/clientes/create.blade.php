@@ -15,7 +15,7 @@
 @endif
 </div>
 </div>
-{!!Form::open(array('url'=>'posiblecliente','method'=>'POST','autocomplete'=>'off')
+{!!Form::open(array('url'=>'cliente','method'=>'POST','autocomplete'=>'off')
 )!!}
 {{Form::token()}}
 <div class="row">
@@ -61,7 +61,7 @@ placeholder="Telefono">
 class="glyphicon glyphicon-ok"></span> Guardar</button>
 <button class="btn btn-danger" type="reset"><span
 class="glyphicon glyphicon-remove"></span> Vaciar Campos</button>
-<a class="btn btn-info" type="reset" href="{{url('posiblecliente')}}">
+<a class="btn btn-info" type="reset" href="{{url('cliente')}}">
 <span class="glyphicon glyphicon-home"></span> Regresar </a>
 </div>
 </div>

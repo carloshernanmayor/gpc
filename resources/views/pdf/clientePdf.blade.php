@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Clientes</h3>
+    <h3> Tus Clientes</h3>
 
     <div class="row">
 <div class="col-md-12 col-xs-12">
@@ -21,14 +21,14 @@
 <td>Correo</td>
 </thead>
 <tbody>
-@foreach($posible_cliente as $pos)
+@foreach($cliente as $c)
 <tr>
-<td>{{ $pos->id_cliente }}</td>
-<td>{{ $pos->nombre }}</td>
-<td>{{ $pos->identificacion}}</td>
-<td>{{ $pos->telefono }}</td>
-<td>{{ $pos->direccion}}</td>
-<td>{{ $pos->correo }}</td>
+<td>{{ $c->id_cliente }}</td>
+<td>{{ $c->nombre }}</td>
+<td>{{ $c->identificacion}}</td>
+<td>{{ $c->telefono }}</td>
+<td>{{ $c->direccion}}</td>
+<td>{{ $c->correo }}</td>
 <td>
 @endforeach
 </tbody>
