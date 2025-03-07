@@ -15,10 +15,14 @@ class posibleclienteController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $poscliente=posible_cliente::orderBy('id_cliente','ASC')->paginate(10);
-        //dd('$poscliente');
-        return view('posibles_clientes.index',compact('poscliente'));
 
+        // $atend = Atencion::where('id_vendedor', auth()->user()->id_vendedor)->get(); 
+$atend = Atencion::where('id_vendedor', auth()->user()->id_vendedor)->pluck('id_cliente'); 
+
+// Use `whereIn()` to filter `posible_cliente`
+$poscliente = posible_cliente::whereIn('id_cliente', $atend)->orderBy('id_cliente', 'ASC')->paginate(10);
+
+  return view('posibles_clientes.index', compact('poscliente'));
     }
 
     /**

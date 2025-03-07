@@ -1,7 +1,7 @@
 @extends('layout.plantilla')
 
 @section('titulo')
-   Clientes
+  Tus Clientes
 @endsection('titulo')
 
 @section('contenido')
