@@ -21,6 +21,12 @@ class vendedorController extends Controller
 
     }
 
+
+    public function profile(){
+       $vendedor=vendedor::where('id_vendedor', auth()->user()->id_vendedor)->get();
+       return view('vendedores.profile', compact('vendedor'));
+    } 
+
     /**
      * Show the form for creating a new resource.
      *
