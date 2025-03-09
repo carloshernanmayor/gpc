@@ -1,5 +1,4 @@
-@extends('layout.plantilla')
-
+@extends('home')
 @section('titulo')
    Atenciones
 @endsection('titulo')

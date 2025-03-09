@@ -1,5 +1,4 @@
-@extends('layout.plantilla')
-
+@extends('home')
 @section('titulo')
    Productos y/o servicios
 @endsection('titulo')

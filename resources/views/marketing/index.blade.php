@@ -1,5 +1,4 @@
-@extends('layout.plantilla')
-
+@extends('home')
 @section('titulo')
    Tipo de marketing
 @endsection('titulo')

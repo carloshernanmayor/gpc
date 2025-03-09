@@ -1,4 +1,4 @@
-@extends('layout.plantilla')
+@extends('home')
 
 @section('titulo')
    Vendedores

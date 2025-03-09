@@ -30,13 +30,7 @@ Route::resource('productoservicio', 'App\Http\Controllers\productoservicioContro
 Route::resource('marketing', 'App\Http\Controllers\marketingController');
 Route::resource('atencion', 'App\Http\Controllers\AtencionController');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
