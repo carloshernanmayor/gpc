@@ -41,5 +41,5 @@ Route::get('/profile', 'App\Http\Controllers\vendedorController@profile');
 
 
 
-Route::get('/logout', 'AuthController@logout')->name('logout');
+Route::get('logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
