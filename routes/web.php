@@ -34,12 +34,9 @@ Route::resource('atencion', 'App\Http\Controllers\AtencionController');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')
-;
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
 Route::get('/profile', 'App\Http\Controllers\vendedorController@profile');
-
-
-
 
 Route::get('logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 

@@ -40,24 +40,42 @@ return view('clientes.index', compact('clientes'));
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $clientes=new cliente;
-        $clientes->nombre=$request->get('nombre');
-        $clientes->identificacion=$request->get('identificacion');                                                            
-        $clientes->telefono=$request->get('telefono');
-        $clientes->direccion=$request->get('direccion');
-        $clientes->correo=$request->get('correo');                                               
-        
-        $clientes->save();
-        return Redirect::to('cliente');
-        
-        $newClienteId = $clientes->id_cliente;
+{
+    $clientenuevo = cliente::where('identificacion', $request->get('identificacion'))->first();
 
+    if ($clientenuevo) {
+        $nuevaatencion = new atencion;
+        $nuevaatencion->id_cliente = $clientenuevo->id_cliente;
+        $nuevaatencion->id_vendedor = auth()->user()->id_vendedor;
+        $nuevaatencion->descripcion = 'Cliente nuevo';
+        $nuevaatencion->save();  
+    } else {
+        $clientes = new cliente;
+        $clientes->nombre = $request->get('nombre');
+        $clientes->identificacion = $request->get('identificacion');
+        $clientes->telefono = $request->get('telefono');
+        $clientes->direccion = $request->get('direccion');
+        $clientes->correo = $request->get('correo');
+        $clientes->save();  
+        
+        $nuevaatencion = new atencion;
+        $nuevaatencion->id_cliente = $clientes->id_cliente;
+        $nuevaatencion->id_vendedor = auth()->user()->id_vendedor;
+        $nuevaatencion->descripcion = 'Cliente nuevo';
+        $nuevaatencion->save();  
+    }
+
+    return Redirect::to('cliente'); 
+}
+
+        
+        
+        
     // Crear un registro en la otra tabla y asignar la clave primaria de posible_cliente
         // $otratencion = new atencion;
         // $otratencion-> id_posible_cliente = $newPosibleClienteId;
         // $otraatencion->save();
-    }
+    
 
     /**
      * Display the specified resource.
