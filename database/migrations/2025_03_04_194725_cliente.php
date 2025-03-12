@@ -15,12 +15,16 @@ class Cliente extends Migration
     {
         Schema::create('cliente', function (Blueprint $table) {
             $table->bigIncrements('id_cliente'); 
+            $table->string('tipo');
             $table->string('nombre');
             $table->string('identificacion')->unique();
             $table->string('telefono');
             $table->string('direccion');
             $table->string('correo')->unique();
-            $table->timestamps();
+            $table->string('contacto_nombre')->nullable($value = true);
+            $table->string('contacto_correo')->nullable($value = true);
+            $table->string('contacto_telefono')->nullable($value = true);
+            $table->dateTime('fecha_registro');
         });
     }
     

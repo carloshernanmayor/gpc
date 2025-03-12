@@ -12,8 +12,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class vendedor extends Model
 {
     use HasFactory;
-protected $fillable = ['nombre','identificacion','telefono','direccion','correo'];
-public $timestamps = false;
+protected $fillable = ['nombre','identificacion','telefono','direccion','correo','fecha_ingreso','estado'];
+public $timestamps = true;
 protected $primaryKey='id_vendedor';
 protected $table='vendedor';
 

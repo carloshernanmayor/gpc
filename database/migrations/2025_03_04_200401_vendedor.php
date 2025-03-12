@@ -20,7 +20,8 @@ class Vendedor extends Migration
             $table->string('telefono');
             $table->string('direccion');
             $table->string('correo')->unique();
-            $table->timestamps();
+            $table->dateTime('fecha_ingreso');
+            $table->string('estado');
         });
     }
 

@@ -16,12 +16,16 @@ class Atencion extends Migration
             $table->bigIncrements('id_atencion');
             $table->unsignedBigInteger('id_cliente'); 
             $table->unsignedBigInteger('id_vendedor'); 
-            $table->text('descripcion');
-            $table->timestamps();
+            $table->unsignedBigInteger('id_guion');
+            $table->unsignedBigInteger('id_producto');
+            $table->dateTime('fecha');
+            $table->text('observaciones');
 
             
             $table->foreign('id_cliente')->references('id_cliente')->on('cliente')->onDelete('cascade');
             $table->foreign('id_vendedor')->references('id_vendedor')->on('vendedor')->onDelete('cascade');
+            $table->foreign('id_guion')->references('id_guion')->on('guion_ventas')->onDelete('cascade');
+            $table->foreign('id_producto')->references('id_producto')->on('producto')->onDelete('cascade');
         });
     }
 
