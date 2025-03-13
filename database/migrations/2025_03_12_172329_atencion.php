@@ -16,11 +16,11 @@ class Atencion extends Migration
             $table->bigIncrements('id_atencion');
             $table->unsignedBigInteger('id_cliente'); 
             $table->unsignedBigInteger('id_vendedor'); 
-            $table->unsignedBigInteger('id_guion');
-            $table->unsignedBigInteger('id_producto');
-            $table->dateTime('fecha');
+            $table->unsignedBigInteger('id_guion')->nullable();
+            $table->unsignedBigInteger('id_producto')->nullable();
+            $table->dateTime('fecha')->useCurrent();
             $table->enum('resultado', ['pendiente', 'exitoso', 'no interesado'])->default('pendiente');            
-            $table->text('observaciones');
+            $table->text('observaciones')->nullable();
 
             
             $table->foreign('id_cliente')->references('id_cliente')->on('cliente')->onDelete('cascade');

@@ -21,6 +21,14 @@
 <div class="row">
 <div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
 <div class="form-group">
+<label for="tipo">Tipo</label>
+<input type="text" name="tipo"
+id="tipo" class="form-control"
+placeholder="Digite el tipo">
+</div>
+</div>
+<div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
+<div class="form-group">
 <label for="documento">identificacion</label>
 <input type="number" name="identificacion"
 id="identificacion" class="form-control"
@@ -53,6 +61,38 @@ placeholder="Correo Electrónico">
 <label for="telefono">Telefono</label>
 <input type="text" name="telefono" id="telefono" class="form-control"
 placeholder="Telefono"> 
+</div>
+</div>
+<div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
+<div class="form-group">
+<label for="contacto_nombre">Nombre de contacto</label>
+<input type="text" name="ncontacto"
+id="ncontacto" class="form-control"
+placeholder="Digite el nombre del contacto">
+</div>
+</div>
+<div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
+<div class="form-group">
+<label for="contacto_correo">Correo de contacto</label>
+<input type="text" name="ccontacto"
+id="ccontacto" class="form-control"
+placeholder="Digite el correo del contacto">
+</div>
+</div>
+<div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
+<div class="form-group">
+<label for="contacto_telefono">telefono de contacto</label>
+<input type="text" name="tcontacto"
+id="tcontacto" class="form-control"
+placeholder="Digite el telefono del contacto">
+</div>
+</div>
+<div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
+<div class="form-group">
+<label for="fecha">fecha de registro</label>
+<input type="text" name="fecha"
+id="fecha" class="form-control"
+placeholder="Digite el nombre del contacto">
 </div>
 </div>
 <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">

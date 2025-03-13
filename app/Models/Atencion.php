@@ -10,7 +10,7 @@ class Atencion extends Model
 {
     use HasFactory;
     protected $fillable = ['id_atencion','id_vendedor','id_cliente', 'id_guion','fecha','resultado','observaciones'];
-    public $timestamps = true;
+    public $timestamps = false;
     protected $primaryKey='id_atencion';
     protected $table='atencion';
 

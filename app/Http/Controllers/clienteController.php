@@ -47,21 +47,28 @@ return view('clientes.index', compact('clientes'));
         $nuevaatencion = new atencion;
         $nuevaatencion->id_cliente = $clientenuevo->id_cliente;
         $nuevaatencion->id_vendedor = auth()->user()->id_vendedor;
-        $nuevaatencion->descripcion = 'Cliente nuevo';
+        $nuevaatencion->resultado='pendiente';
+        $nuevaatencion->observaciones='cliente nuevo';
         $nuevaatencion->save();  
     } else {
         $clientes = new cliente;
+        $clientes->tipo=$request->get('tipo');
         $clientes->nombre = $request->get('nombre');
         $clientes->identificacion = $request->get('identificacion');
         $clientes->telefono = $request->get('telefono');
         $clientes->direccion = $request->get('direccion');
         $clientes->correo = $request->get('correo');
+        $clientes->contacto_nombre = $request->get('contacto_nombre');
+        $clientes->contacto_correo = $request->get('contacto_correo');
+        $clientes->contacto_telefono= $request->get('contacto_telefono');
+        $clientes->contacto_telefono= $request->get('fecha_registro');
         $clientes->save();  
         
         $nuevaatencion = new atencion;
         $nuevaatencion->id_cliente = $clientes->id_cliente;
         $nuevaatencion->id_vendedor = auth()->user()->id_vendedor;
-        $nuevaatencion->descripcion = 'Cliente nuevo';
+        $nuevaatencion->resultado='pendiente';
+        $nuevaatencion->observaciones='cliente nuevo';
         $nuevaatencion->save();  
     }
 
@@ -109,11 +116,16 @@ return view('clientes.index', compact('clientes'));
      */
     public function update(Request $request, $id){
         $cliente=cliente::findOrFail($id);
-        $cliente->identificacion=$request->get('identificacion');
-        $cliente->nombre=$request->get('nombre');
-        $cliente->direccion=$request->get('direccion');
-        $cliente->correo=$request->get('correo');
-        $cliente->telefono=$request->get('telefono');
+        $clientes->tipo=$request->get('tipo');
+        $clientes->nombre = $request->get('nombre');
+        $clientes->identificacion = $request->get('identificacion');
+        $clientes->telefono = $request->get('telefono');
+        $clientes->direccion = $request->get('direccion');
+        $clientes->correo = $request->get('correo');
+        $clientes->contacto_nombre = $request->get('contacto_nombre');
+        $clientes->contacto_correo = $request->get('contacto_correo');
+        $clientes->contacto_telefono= $request->get('contacto_telefono');
+        $clientes->contacto_telefono= $request->get('fecha_registro');
         $cliente->update();
         return Redirect::to('cliente');
         

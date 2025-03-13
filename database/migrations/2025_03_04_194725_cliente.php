@@ -24,7 +24,7 @@ class Cliente extends Migration
             $table->string('contacto_nombre')->nullable($value = true);
             $table->string('contacto_correo')->nullable($value = true);
             $table->string('contacto_telefono')->nullable($value = true);
-            $table->dateTime('fecha_registro');
+            $table->dateTime('fecha_registro')->useCurrent();
         });
     }
     
