@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\vendedor;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+
 
 class VendedorSeeder extends Seeder
 {
@@ -14,45 +17,43 @@ class VendedorSeeder extends Seeder
      */
     public function run()
     {
-        $vendedor=new vendedor();
-        $vendedor->nombre='david vazquez casanova';
-        $vendedor->identificacion='2385946537';
-        $vendedor->telefono='3903457823';
-        $vendedor->direccion='calle 45r #23-56';
-        $vendedor->correo='vazquez@gmail.com';
-
-        $vendedor->save();
-
-        $vendedor2 = new vendedor();
-        $vendedor2->nombre = 'María Fernanda López';
-        $vendedor2->identificacion = '1987654321';
-        $vendedor2->telefono = '3109876543';
-        $vendedor2->direccion = 'Carrera 12 #34-89';
-        $vendedor2->correo = 'maria.lopez@gmail.com';
-        $vendedor2->save();
-
-        $vendedor3 = new vendedor();
-        $vendedor3->nombre = 'Carlos Alberto Ruiz';
-        $vendedor3->identificacion = '3456789123';
-        $vendedor3->telefono = '3012345678';
-        $vendedor3->direccion = 'Avenida 9 #67-45';
-        $vendedor3->correo = 'carlos.ruiz@gmail.com';
-        $vendedor3->save();
-
-        $vendedor4 = new vendedor();
-        $vendedor4->nombre = 'Sofía Jiménez';
-        $vendedor4->identificacion = '4567891234';
-        $vendedor4->telefono = '3208765432';
-        $vendedor4->direccion = 'Calle 50 #10-20';
-        $vendedor4->correo = 'sofia.jimenez@gmail.com';
-        $vendedor4->save();
-
-        $vendedor5 = new vendedor();
-        $vendedor5->nombre = 'Ricardo Mendoza';
-        $vendedor5->identificacion = '5678912345';
-        $vendedor5->telefono = '3156789012';
-        $vendedor5->direccion = 'Diagonal 25 #30-15';
-        $vendedor5->correo = 'ricardo.mendoza@gmail.com';
-        $vendedor5->save();
+        DB::table('vendedor')->insert([
+            [
+                'nombre' => 'Luis Martínez',
+                'identificacion' => '58393748573',
+                'telefono' => '3985641001',
+                'direccion' => 'Calle Comercio 123',
+                'correo' => 'luismartinez@gmail.com',
+                'fecha_ingreso' => Carbon::now()->subYears(2),
+                'estado' => 'activo',
+            ],
+            [
+                'nombre' => 'Ana Torres',
+                'identificacion' => '1834027594',
+                'telefono' => '3765551002',
+                'direccion' => 'Av. Central 456',
+                'correo' => 'anatorres@gmail.com',
+                'fecha_ingreso' => Carbon::now()->subMonths(18),
+                'estado' => 'activo',
+            ],
+            [
+                'nombre' => 'Carlos Méndez',
+                'identificacion' => '1234567898',
+                'telefono' => '3554321003',
+                'direccion' => 'Calle Industrial 789',
+                'correo' => 'carlos.mendez@gmail.com',
+                'fecha_ingreso' => Carbon::now()->subYears(3),
+                'estado' => 'activo',
+            ],
+            [
+                'nombre' => 'Sofía Ríos',
+                'identificacion' => '45678093421',
+                'telefono' => '3655551004',
+                'direccion' => 'Boulevard Comercial 321',
+                'correo' => 'sofia.rios@gmail.com',
+                'fecha_ingreso' => Carbon::now()->subMonths(6),
+                'estado' => 'activo',
+            ],
+        ]);
     }
 }

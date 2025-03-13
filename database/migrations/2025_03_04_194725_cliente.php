@@ -15,7 +15,7 @@ class Cliente extends Migration
     {
         Schema::create('cliente', function (Blueprint $table) {
             $table->bigIncrements('id_cliente'); 
-            $table->string('tipo');
+            $table->enum('tipo', ['natural', 'juridica'])->default('natural');            
             $table->string('nombre');
             $table->string('identificacion')->unique();
             $table->string('telefono');

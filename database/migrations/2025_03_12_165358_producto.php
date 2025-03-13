@@ -31,6 +31,6 @@ class Producto extends Migration
      */
     public function down()
     {
-      Schemma::dropIfExits('producto');
+        Schema::dropIfExists('producto');
     }
 }

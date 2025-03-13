@@ -21,7 +21,7 @@ class Vendedor extends Migration
             $table->string('direccion');
             $table->string('correo')->unique();
             $table->dateTime('fecha_ingreso');
-            $table->string('estado');
+            $table->enum('estado', ['activo', 'inactivo'])->default('activo');            
         });
     }
 

@@ -4,6 +4,9 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\posible_cliente;
+use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
+
 
 class ClienteSeeder extends Seeder
 {
@@ -14,30 +17,43 @@ class ClienteSeeder extends Seeder
      */
     public function run()
     {
-        $cliente=new cliente();
-        $cliente->nombre='Miguel angel orejuela';
-        $cliente->identificacion='2345321349';
-        $cliente->telefono='3276789098';
-        $cliente->direccion='calle 50a #20-80';
-        $cliente->correo='miguel34@gmail.com';
-
-        $cliente->save();
-
-        $cliente2 = new cliente();
-        $cliente2->nombre = 'Juan Pérez';
-        $cliente2->identificacion = '8765432190';
-        $cliente2->telefono = '3001234567';
-        $cliente2->direccion = 'Carrera 10 #15-30';
-        $cliente2->correo = 'juanperez@gmail.com';
-        $cliente2->save();
-
-        $cliente3 = new cliente();
-        $cliente3->nombre = 'Carlos Ramírez';
-        $cliente3->identificacion = '9876543210';
-        $cliente3->telefono = '3124567890';
-        $cliente3->direccion = 'Calle 100 #45-67';
-        $cliente3->correo = 'carlosramirez@gmail.com';
-        $cliente3->save(); 
- 
+        DB::table('cliente')->insert([
+            [
+                'tipo' => 'natural',
+                'nombre' => 'Juan Pérez',
+                'identificacion' => '1234567895',
+                'telefono' => '36534239854',
+                'direccion' => 'Calle Falsa 123',
+                'correo' => 'juan.perez@gmail.com',
+                'contacto_nombre' => null,
+                'contacto_correo' => null,
+                'contacto_telefono' => null,
+                'fecha_registro' => Carbon::now()->subDays(10),
+            ],
+            [
+                'tipo' => 'juridica',
+                'nombre' => 'Empresa XYZ S.A.',
+                'identificacion' => '987654321443',
+                'telefono' => '3295645678',
+                'direccion' => 'Av. Empresarial 456',
+                'correo' => 'contacto@empresaxyz.com',
+                'contacto_nombre' => 'María Gómez',
+                'contacto_correo' => 'mgomez@empresaxyz.com',
+                'contacto_telefono' => '555-4321',
+                'fecha_registro' => Carbon::now()->subMonths(2),
+            ],
+            [
+                'tipo' => 'natural',
+                'nombre' => 'Carlos López',
+                'identificacion' => '9876543215',
+                'telefono' => '3455676789',
+                'direccion' => 'Calle Central 79',
+                'correo' => 'carlos.lopez@gmail.com',
+                'contacto_nombre' => null,
+                'contacto_correo' => null,
+                'contacto_telefono' => null,
+                'fecha_registro' => Carbon::now()->subWeeks(3),
+            ],
+        ]);
     }
 }

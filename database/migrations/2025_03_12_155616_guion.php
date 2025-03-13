@@ -28,6 +28,6 @@ class Guion extends Migration
      */
     public function down()
     {
-        Schema::dropIfExits('guion_ventas');
+        Schema::dropIfExists('guion_ventas');
     }
 }

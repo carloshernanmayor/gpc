@@ -19,6 +19,7 @@ class Atencion extends Migration
             $table->unsignedBigInteger('id_guion');
             $table->unsignedBigInteger('id_producto');
             $table->dateTime('fecha');
+            $table->enum('resultado', ['pendiente', 'exitoso', 'no interesado'])->default('pendiente');            
             $table->text('observaciones');
 
             
