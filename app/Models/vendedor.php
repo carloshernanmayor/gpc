@@ -13,7 +13,7 @@ class vendedor extends Model
 {
     use HasFactory;
 protected $fillable = ['nombre','identificacion','telefono','direccion','correo','fecha_ingreso','estado'];
-public $timestamps = true;
+public $timestamps = false;
 protected $primaryKey='id_vendedor';
 protected $table='vendedor';
 

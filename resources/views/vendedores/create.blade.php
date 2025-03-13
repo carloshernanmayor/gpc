@@ -55,6 +55,20 @@ placeholder="Telefono">
 placeholder="Direccion"> 
 </div>
 </div>
+<div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
+<div class="form-group">
+<label for="fecha_ingreso">Fecha de ingreso</label>
+<input type="text" name="fecha_ingreso" id="fecha" class="form-control"
+placeholder="Fecha de ingreso"> 
+</div>
+</div>
+<div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
+<div class="form-group">
+<label for="estado">Estado</label>
+<input type="text" name="estado" id="esta" class="form-control"
+placeholder="Estado actual"> 
+</div>
+</div>
 <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
 <div class="form-group"> <br>
 <button class="btn btn-primary" type="submit"><span

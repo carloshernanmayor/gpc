@@ -20,22 +20,24 @@
 <table class="table table-striped table-hover">
 <thead>
    
-<th>id</th>
-<th>nombre</th>
-<th>identificacion</th>
-<th>telefono</th>
-<th>correo</th>
+<th>Nombre</th>
+<th>Identificacion</th>
+<th>Telefono</th>
+<th>Correo</th>
+<th>Fecha de ingreso</th>
+<th>Estado</th>
 
 
 </thead>
 <tbody>
 @foreach($vendedor as $pos)
 <tr>
-<td>{{ $pos->id_vendedor }}</td>
 <td>{{ $pos->nombre }}</td>
 <td>{{ $pos->identificacion}}</td>
 <td>{{ $pos->telefono }}</td>
 <td>{{ $pos->correo }}</td>
+<td>{{ $pos->fecha_ingreso }}</td>
+<td>{{ $pos->estado }}</td>
 
 <td>
 <a href="{{URL::action('App\Http\Controllers\vendedorController@edit',$pos->id_vendedor)}}"><button class="btn btn-primary">Actualizar</button></a>

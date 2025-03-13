@@ -42,6 +42,16 @@ value="{{$vendedor->telefono}}">
 <input type="text" name="direccion" id="direccion" class="form-control"
 value="{{$vendedor->direccion}}">
 </div>
+<div class="col-md-4">
+<label for="fecha_ingreso" class="form-label">Fecha de ingreso</label>
+<input type="text" name="fecha_ingreso" id="fecha" class="form-control"
+value="{{$vendedor->fecha_ingreso}}">
+</div>
+<div class="col-md-4">
+<label for="estado" class="form-label">Estado</label>
+<input type="text" name="estado" id="est" class="form-control"
+value="{{$vendedor->estado}}">
+</div>
 <div class="col-12">
 <button class="btn btn-primary" type="submit"><span class="glyphicon glyphiconrefresh"></
 span> Actualizar
