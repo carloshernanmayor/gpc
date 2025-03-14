@@ -57,13 +57,13 @@
                     <p align="center"><img src= "{{ asset('image/vendedor.png') }}" alt="vendedor" width="70" height="70"></p>
                     <p align="center"><span>Vendedores</span></p>
                 </a>
-                <a class="nav-link botonGPC" href="/productoservicio" style="color: #000000">
+                <a class="nav-link botonGPC" href="producto" style="color: #000000">
                     <p align="center"><img src= "{{ asset('image/productoservicio.png') }}" alt="producto_servicio" width="70" height="70"></p>
-                    <p align="center"><span>Producto y/o servicio</span></p>
+                    <p align="center"><span>Productos</span></p>
                 </a>
-                <a class="nav-link botonGPC" href="/marketing" style="color: #000000">
+                <a class="nav-link botonGPC" href="marketing" style="color: #000000">
                     <p align="center"><img src= "{{ asset('image/marketing.png') }}" alt="marketing" width="70" height="70"></p>
-                    <p align="center"><span>Tipo de marketing</span></p>
+                    <p align="center"><span>Guion de ventas</span></p>
                 </a>
                 <a class="nav-link botonGPC" href="atencion" style="color: #000000">
                     <p align="center"><img src= "{{ asset('image/marketing.png') }}" alt="marketing" width="70" height="70"></p>

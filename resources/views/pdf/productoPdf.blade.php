@@ -6,27 +6,29 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Productos y/o servicios</h3>
+    <h3>Productos</h3>
 
     <div class="row">
 <div class="col-md-12 col-xs-12">
 <div class="table-responsive">
 <table class="table table-striped table-hover">
 <thead>
-<td>Id</td>
-<td>Nombre</td>
-<td>Descripción</td>
-<td>Precio</td>
-<td>Tipo</td>
+<th>nombre</th>
+<th>tipo</th>
+<th>material</th>
+<th>sector</th>
+<th>dimensiones</th>
+<th>fecha de creacion</th>
 </thead>
 <tbody>
-@foreach($posproductoservicio as $pos)
+@foreach($posproducto as $pos)
 <tr>
-<td>{{ $pos->id_producto_servicio }}</td>
 <td>{{ $pos->nombre }}</td>
-<td>{{ $pos->descripcion }}</td>
-<td>{{ $pos->precio }}</td>
-<td>{{ $pos->tipo }}</td>
+<td>{{ $pos->tipo}}</td>
+<td>{{ $pos->material }}</td>
+<td>{{ $pos->sector}}</td>
+<td>{{ $pos->dimensiones }}</td>
+<td>{{ $pos->fecha_creacion}}</td>
 <td>
 @endforeach
 </tbody>

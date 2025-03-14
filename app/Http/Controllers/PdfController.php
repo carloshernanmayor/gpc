@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\cliente;
 use App\Models\vendedor;
-use App\Models\producto_servicio;
+use App\Models\producto;
 use App\Models\marketing;
 use pdf;
 
@@ -19,10 +19,10 @@ $pdf->setPaper('carta', 'A4');
 return $pdf->stream();
 }
 
-public function imprimirProductoServicio(Request $request)
+public function imprimirProducto(Request $request)
 {
-$posproductoservicio=producto_servicio::orderBy('id_producto_servicio','ASC')->get();
-$pdf = \PDF::loadView('pdf.producto_servicioPDF',['posproductoservicio' => $posproductoservicio ]);
+$posproducto=producto::orderBy('id_producto','ASC')->get();
+$pdf = \PDF::loadView('pdf.productoPDF',['posproducto' => $posproducto ]);
 $pdf->setPaper('carta', 'A4');
 return $pdf->stream();
 }
