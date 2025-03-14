@@ -16,7 +16,7 @@ class GuionSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('guion_ventas')->insert([
+        DB::table('guion')->insert([
             [
                 'canal' => 'Email',
                 'mensaje' => 'Estimado cliente, queremos presentarle nuestra nueva oferta exclusiva para este mes. ¡No se la pierda!',

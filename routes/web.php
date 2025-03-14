@@ -23,11 +23,11 @@ Route::get('/', function () {
 Route::get('imprimircliente','App\Http\Controllers\PdfController@imprimirCliente')->name('id_cliente');
 Route::get('imprimirvendedor','App\Http\Controllers\PdfController@imprimirVendedor')->name('id_vendedor');
 Route::get('imprimirproducto','App\Http\Controllers\PdfController@imprimirProducto')->name('id_producto');
-Route::get('imprimirmarketing','App\Http\Controllers\PdfController@imprimirMarketing')->name('id_marketing');
+Route::get('imprimirguion','App\Http\Controllers\PdfController@imprimirGuion')->name('id_guion');
 Route::resource('cliente', 'App\Http\Controllers\clienteController');
 Route::resource('vendedor', 'App\Http\Controllers\vendedorController');
 Route::resource('producto', 'App\Http\Controllers\productoController');
-Route::resource('marketing', 'App\Http\Controllers\marketingController');
+Route::resource('guion', 'App\Http\Controllers\guionController');
 Route::resource('atencion', 'App\Http\Controllers\AtencionController');
 
 

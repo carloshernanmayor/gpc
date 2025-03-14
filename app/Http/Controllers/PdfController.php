@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\cliente;
 use App\Models\vendedor;
 use App\Models\producto;
-use App\Models\marketing;
+use App\Models\guion;
 use pdf;
 
 class PdfController extends Controller
@@ -35,10 +35,10 @@ $pdf->setPaper('carta', 'A4');
 return $pdf->stream();
 }
 
-public function imprimirMarketing(Request $request)
+public function imprimirGuion(Request $request)
 {
-$marketing =marketing ::orderBy('id_marketing','ASC')->get();
-$pdf = \PDF::loadView('pdf.marketingPDF',['marketing' => $marketing ]);
+$guion =guion ::orderBy('id_guion','ASC')->get();
+$pdf = \PDF::loadView('pdf.guionPDF',['guion' => $guion ]);
 $pdf->setPaper('carta', 'A4');
 return $pdf->stream();
 }

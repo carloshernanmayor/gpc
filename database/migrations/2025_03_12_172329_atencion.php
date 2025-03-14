@@ -25,7 +25,7 @@ class Atencion extends Migration
             
             $table->foreign('id_cliente')->references('id_cliente')->on('cliente')->onDelete('cascade');
             $table->foreign('id_vendedor')->references('id_vendedor')->on('vendedor')->onDelete('cascade');
-            $table->foreign('id_guion')->references('id_guion')->on('guion_ventas')->onDelete('cascade');
+            $table->foreign('id_guion')->references('id_guion')->on('guion')->onDelete('cascade');
             $table->foreign('id_producto')->references('id_producto')->on('producto')->onDelete('cascade');
         });
     }

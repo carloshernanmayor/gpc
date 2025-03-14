@@ -61,8 +61,8 @@
                     <p align="center"><img src= "{{ asset('image/productoservicio.png') }}" alt="producto_servicio" width="70" height="70"></p>
                     <p align="center"><span>Productos</span></p>
                 </a>
-                <a class="nav-link botonGPC" href="marketing" style="color: #000000">
-                    <p align="center"><img src= "{{ asset('image/marketing.png') }}" alt="marketing" width="70" height="70"></p>
+                <a class="nav-link botonGPC" href="guion" style="color: #000000">
+                    <p align="center"><img src= "{{ asset('image/marketing.png') }}" alt="guion" width="70" height="70"></p>
                     <p align="center"><span>Guion de ventas</span></p>
                 </a>
                 <a class="nav-link botonGPC" href="atencion" style="color: #000000">

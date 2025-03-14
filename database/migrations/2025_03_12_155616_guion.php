@@ -13,11 +13,11 @@ class Guion extends Migration
      */
     public function up()
     {
-        Schema::create('guion_ventas', function (Blueprint $table){
+        Schema::create('guion', function (Blueprint $table){
             $table->bigIncrements('id_guion');
             $table->string('canal');
             $table->text('mensaje');
-            $table->date('fecha_creacion');
+            $table->dateTime('fecha_creacion');
         });
     }
 
@@ -28,6 +28,6 @@ class Guion extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('guion_ventas');
+        Schema::dropIfExists('guion');
     }
 }

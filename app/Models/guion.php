@@ -9,8 +9,9 @@ class guion extends Model
 {
     use HasFactory;
     protected $fillable = ['canal','mensaje','fecha_creacion'];
+    public $timestamps = false;
 protected $primaryKey='id_guion';
-protected $table='guion_ventas';
+protected $table='guion';
 
 public function atenciones(): HasMany
 

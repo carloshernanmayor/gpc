@@ -3,10 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\marketing;
+use App\Models\guion;
 use Illuminate\Support\Facades\Redirect;
 
-class marketingController extends Controller
+class guionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +14,9 @@ class marketingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index(){
-        $marketing=marketing::orderBy('id_marketing','DESC')->paginate(10);
+        $guiones=guion::orderBy('id_guion','DESC')->paginate(10);
         //dd('$poscliente');
-        return view('marketing.index',compact('marketing'));
+        return view('guion.index',compact('guiones'));
 
     }
 
@@ -26,7 +26,7 @@ class marketingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create(){
-        return view ('marketing.create');
+        return view ('guion.create');
     }
 
     /**
@@ -37,11 +37,13 @@ class marketingController extends Controller
      */
     public function store(Request $request)
     {
-        $marketing=new marketing;
-        $marketing->tipo_marketing=$request->get('tipo_marketing');                                               
+        $guion=new guion;
+        $guion->canal=$request->get('canal'); 
+        $guion->mensaje=$request->get('mensaje');   
+        $guion->fecha_creacion=$request->get('fecha');                                                  
         
-        $marketing->save();
-        return Redirect::to('marketing');
+        $guion->save();
+        return Redirect::to('guion');
     }
 
     /**
@@ -63,8 +65,8 @@ class marketingController extends Controller
      */
     public function edit($ide){
 
-        $marketing=marketing::findOrFail($ide);
-        return view("marketing.edit",["marketing"=>$marketing]);
+        $guion=guion::findOrFail($ide);
+        return view("guion.edit",["guion"=>$guion]);
     }
 
     /**
@@ -75,10 +77,12 @@ class marketingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id){
-        $marketing=marketing::findOrFail($id);
-        $marketing->tipo_marketing=$request->get('tipo_marketing');
-        $marketing->update();
-        return Redirect::to('marketing');
+        $guion=guion::findOrFail($id);
+        $guion->canal=$request->get('canal'); 
+        $guion->mensaje=$request->get('mensaje');   
+        $guion->fecha_creacion=$request->get('fecha');   
+        $guion->update();
+        return Redirect::to('guion');
         
     }
 
@@ -89,8 +93,8 @@ class marketingController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id) {
-       $marketing=marketing::findOrFail($id);
-       $marketing->delete();
-       return Redirect::to('marketing');
+       $guion=guion::findOrFail($id);
+       $guion->delete();
+       return Redirect::to('guion');
     }
 }
