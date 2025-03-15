@@ -16,6 +16,6 @@ protected $table='cliente';
 
 public function atenciones(): HasMany
     {
-        return $this->hasMany(Atencion::class, 'id_cliente');
+        return $this->hasMany(Atencion::class);
     }
 }

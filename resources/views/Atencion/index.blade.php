@@ -23,20 +23,27 @@
 <table class="table table-striped table-hover">
 <thead>
    
-<th>id atencion</th>
-<th>id vendedor</th>
-<th>id posible cliente</th>
-<th>descripcion</th>
+<th>Cliente</th>
+<th>Producto</th>
+<th>Canal</th>
+<th>Mensaje</th>
+<th>Resultado</th>
+<th>Observaciones</th>
+<th>fecha</th>
 
 
 </thead>
 <tbody>
 @foreach($aten as $atencion)
 <tr>
-<td>{{ $atencion->id_atencion }}</td>
-<td>{{ $atencion->id_vendedor }}  </td>
-<td>{{ $atencion->id_cliente}}</td>
-<td>{{ $atencion->descripcion }}</td>
+<td>{{ $atencion->cliente->nombre}}</td>
+<td>{{ $atencion->producto->nombre ?? 'Ninguno' }}</td>
+<td>{{ $atencion->guion->canal  ?? 'Ninguno' }}</td>
+<td>{{ $atencion->guion->mensaje ?? 'Ninguno' }}</td>
+<td>{{ $atencion->resultado }}</td>
+<td>{{ $atencion->observaciones }}</td>
+<td>{{ $atencion->fecha }}</td>
+
 
 @endforeach
 

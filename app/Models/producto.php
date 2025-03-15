@@ -12,4 +12,11 @@ protected $fillable = ['nombre','tipo','material','sector','dimensiones','fecha_
 public $timestamps = false;
 protected $primaryKey='id_producto';
 protected $table='producto';
+
+
+public function atenciones(): HasMany
+    {
+        return $this->hasMany(Atencion::class);
+    }
+
 }

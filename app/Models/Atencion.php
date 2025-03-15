@@ -17,17 +17,22 @@ class Atencion extends Model
 
 public function cliente(): BelongsTo
 {
-    return $this->belongsTo(cliente::class);
+    return $this->belongsTo(cliente::class, 'id_cliente');
 }
 
 public function vendedor(): BelongsTo
 {
-    return $this->belongsTo(vendedor::class);
+    return $this->belongsTo(vendedor::class, 'id_vendedor');
 }
 
 public function guion(): BelongsTo
 {
-    return $this->belongsTo(guion::class);
+    return $this->belongsTo(guion::class, 'id_guion');
+}
+
+public function producto(): BelongsTo
+{
+    return $this->belongsTo(producto::class, 'id_producto');
 }
 
 

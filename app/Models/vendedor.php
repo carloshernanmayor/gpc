@@ -24,6 +24,6 @@ public function user()
 
 public function atenciones(): HasMany
 {
-    return $this->hasMany(Atencion::class, 'id_vendedor');
+    return $this->hasMany(Atencion::class);
 }
 }
