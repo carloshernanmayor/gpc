@@ -32,7 +32,7 @@ public function guion(): BelongsTo
 
 public function producto(): BelongsTo
 {
-    return $this->belongsTo(producto::class, 'id_producto');
+    return $this->belongsTo(producto::class,'id_producto');
 }
 
 

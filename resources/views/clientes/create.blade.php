@@ -3,7 +3,7 @@
 
 <div class="row">
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-<h4>Ingresar posible cliente</h4>
+<h4>Ingresar cliente</h4>
 @if (count($errors)>0)
 <div class="alert alert-danger">
 <ul>
@@ -15,8 +15,7 @@
 @endif
 </div>
 </div>
-{!!Form::open(array('url'=>'cliente','method'=>'POST','autocomplete'=>'off')
-)!!}
+{!!Form::open(array('url'=>'cliente','method'=>'POST','autocomplete'=>'off'))!!}
 {{Form::token()}}
 <div class="row">
 <div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Atencion;
 use App\Models\vendedor;
 use App\Models\cliente;
+use App\Models\guion;
 use Illuminate\Support\Facades\Redirect;
 
 class AtencionController extends Controller
@@ -31,7 +32,7 @@ class AtencionController extends Controller
      */
     public function create()
     {
-        //
+        return view('atencion.create');
     }
 
     /**
@@ -51,9 +52,11 @@ class AtencionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+       $guiones=guion::all();
+       $lastatencion=atencion::find(atencion::max('id_atencion'));
+       return view('Atencion.atenguion', compact('guiones', 'lastatencion'));
     }
 
     /**
@@ -64,7 +67,8 @@ class AtencionController extends Controller
      */
     public function edit($id)
     {
-        //
+        $atencion=Atencion::findOrFail($id);
+        return view("Atencion.edit",["atencion"=>$atencion]);
     }
 
     /**
@@ -76,7 +80,15 @@ class AtencionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $atencion=Atencion::findOrFail($id);
+        $atencion->cliente=$request->get('cliente');
+        $atencion->cliente=$request->get('producto');
+        $atencion->cliente=$request->get('canal');
+        $atencion->cliente=$request->get('resultado');
+        $atencion->cliente=$request->get('obser');
+        $atencion->cliente=$request->get('fecha');
+        $atencion->update();
+        return Redirect::to('atencion');
     }
 
     /**

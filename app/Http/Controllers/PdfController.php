@@ -7,6 +7,7 @@ use App\Models\cliente;
 use App\Models\vendedor;
 use App\Models\producto;
 use App\Models\guion;
+use App\Models\Atencion;
 use pdf;
 
 class PdfController extends Controller
@@ -42,5 +43,14 @@ $pdf = \PDF::loadView('pdf.guionPDF',['guion' => $guion ]);
 $pdf->setPaper('carta', 'A4');
 return $pdf->stream();
 }
+
+public function imprimirAtencion(Request $request)
+{
+$atencion=Atencion::orderBy('id_atencion','ASC')->get();
+$pdf = \PDF::loadView('pdf.atencionPDF',['atencion' => $atencion ]);
+$pdf->setPaper('carta', 'A4');
+return $pdf->stream();
+}
+
 
 }

@@ -7,7 +7,7 @@
 
 <div class="row">
 <div class="col-md-9">
-   <a href="{{url('producto\create')}}" class="pull-right">
+   <a href="{{url('/Final_proyect/gpc/public/producto/create')}}" class="pull-right">
 <button class="btn btn-success">Crear producto</button> </a>
 
 
