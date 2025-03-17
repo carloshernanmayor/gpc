@@ -15,83 +15,55 @@
 @endif
 </div>
 </div>
-{!!Form::open(array('url'=>'','method'=>'POST','autocomplete'=>'off'))!!}
+{!!Form::open(array('url'=>'atencion','method'=>'POST','autocomplete'=>'off'))!!}
 {{Form::token()}}
 <div class="row">
 <div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
 <div class="form-group">
-<label for="tipo">Tipo</label>
-<input type="text" name="tipo"
-id="tipo" class="form-control"
-placeholder="Digite el tipo">
+<label for="cliente">Clientes</label>
+<select name="cliente" id="cliente">
+<option value="">-- Selecciona un cliente --</option>
+    @foreach($clientes as $cliente)
+        <option value="{{ $cliente->id_cliente }}">{{ $cliente->nombre }}</option>
+    @endforeach
+
+</select>
 </div>
 </div>
 <div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
 <div class="form-group">
-<label for="documento">identificacion</label>
-<input type="number" name="identificacion"
-id="identificacion" class="form-control"
-placeholder="Digite el número Documento">
+<label for="producto">Productos</label>
+<select name="producto" id="producto">
+<option value="">-- Selecciona un producto --</option>
+    @foreach($productos as $producto)
+        <option value="{{ $producto->id_producto }}">{{ $producto->nombre }}</option>
+    @endforeach
+
+</select>
 </div>
 </div>
 <div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
 <div class="form-group">
-<label for="nombre">Nombre</label>
-<input type="text" name="nombre" id="nombre" class="form-control"
-placeholder="Nombre Completo">
+<label for="">guiones</label>
+<select name="guion" id="guion">
+<option value="">-- Selecciona un guion --</option>
+    @foreach($guiones as $guion)
+        <option value="{{ $guion->id_guion }}">{{ $guion->mensaje }}</option>
+    @endforeach
+
+</select>
 </div>
 </div>
 <div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
 <div class="form-group">
-<label for="direccion">Direccion</label>
-<input type="text" name="direccion" id="direccion" class="form-control"
-placeholder="Direccion">
+<label for="resultado">Resultado</label>
+<input name="resultado" type="text" placeholder="pendiente / exitoso/ no interesado">
 </div>
 </div>
 <div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
 <div class="form-group">
-<label for="correo">Email</label>
-<input type="text" name="correo" id="correo" class="form-control"
-placeholder="Correo Electrónico">                   
-</div>
-</div>
-<div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
-<div class="form-group">
-<label for="telefono">Telefono</label>
-<input type="text" name="telefono" id="telefono" class="form-control"
-placeholder="Telefono"> 
-</div>
-</div>
-<div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
-<div class="form-group">
-<label for="contacto_nombre">Nombre de contacto</label>
-<input type="text" name="ncontacto"
-id="ncontacto" class="form-control"
-placeholder="Digite el nombre del contacto">
-</div>
-</div>
-<div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
-<div class="form-group">
-<label for="contacto_correo">Correo de contacto</label>
-<input type="text" name="ccontacto"
-id="ccontacto" class="form-control"
-placeholder="Digite el correo del contacto">
-</div>
-</div>
-<div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
-<div class="form-group">
-<label for="contacto_telefono">telefono de contacto</label>
-<input type="text" name="tcontacto"
-id="tcontacto" class="form-control"
-placeholder="Digite el telefono del contacto">
-</div>
-</div>
-<div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
-<div class="form-group">
-<label for="fecha">fecha de registro</label>
-<input type="text" name="fecha"
-id="fecha" class="form-control"
-placeholder="Digite el nombre del contacto">
+<label for="obser">Observaciones</label>
+<textarea name="obser" id="" ></textarea>
 </div>
 </div>
 <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">

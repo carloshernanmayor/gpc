@@ -65,8 +65,8 @@
                 <div class="modal-body">Agregaras un cliente nuevo o un cliente antiguo?</div>
                 <div class="modal-footer">
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancelar</button>
-                    <a class="btn btn-terciary" href="logout">Cliente antiguo</a>
-                    <a class="btn btn-primary" href="{{url('atencion/create')}}">Cliente nuevo</a>
+                    <a class="btn btn-terciary" href="{{url('atencion/create')}}">Cliente antiguo</a>
+                    <a class="btn btn-primary" href="{{url('cliente/create')}}">Cliente nuevo</a>
                 </div>
             </div>
         </div>

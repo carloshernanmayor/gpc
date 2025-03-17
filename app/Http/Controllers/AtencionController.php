@@ -7,6 +7,7 @@ use App\Models\Atencion;
 use App\Models\vendedor;
 use App\Models\cliente;
 use App\Models\guion;
+use App\Models\producto;
 use Illuminate\Support\Facades\Redirect;
 
 class AtencionController extends Controller
@@ -32,7 +33,11 @@ class AtencionController extends Controller
      */
     public function create()
     {
-        return view('atencion.create');
+        $guiones=guion::all();
+        $atend = Atencion::where('id_vendedor', auth()->user()->id_vendedor)->pluck('id_cliente'); 
+        $clientes =cliente::whereIn('id_cliente', $atend)->orderBy('id_cliente', 'ASC')->get();
+        $productos=producto::all();
+        return view('atencion.create', compact('guiones', 'clientes','productos'));
     }
 
     /**
@@ -43,7 +48,16 @@ class AtencionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $nueva=new Atencion();
+        $nueva->id_cliente=$request->get('cliente');
+        $nueva->id_vendedor=auth()->user()->id_vendedor;
+        $nueva->id_producto=$request->get('producto');
+        $nueva->id_guion=$request->get('guion');
+        $nueva->resultado=$request->get('resultado');
+        $nueva->observaciones=$request->get('obser');   
+        $nueva->save(); 
+        return Redirect::to('atencion'); 
+     
     }
 
     /**
@@ -55,8 +69,7 @@ class AtencionController extends Controller
     public function show()
     {
        $guiones=guion::all();
-       $lastatencion=atencion::find(atencion::max('id_atencion'));
-       return view('Atencion.atenguion', compact('guiones', 'lastatencion'));
+       return view('Atencion.create', compact('guiones', 'lastatencion'));
     }
 
     /**

@@ -38,7 +38,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::get('/profile', 'App\Http\Controllers\vendedorController@profile');
-Route::post('/atenguion', 'App\Http\Controllers\AtencionController@show');
+Route::post('atencion/create', 'App\Http\Controllers\AtencionController@show');
 
 Route::get('logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
 
