@@ -28,7 +28,7 @@
 <div class="col-md-4">
 <label for="producto">Productos</label>
 <select name="producto" id="producto">
-<option value="{{$atencion->id_producto}}">{{$atencion->producto->nombre}}</option>
+<option value="{{$atencion->id_producto}}">{{$atencion->producto->nombre ?? 'ninguno'}}</option>
     @foreach($productos as $producto)
         <option value="{{ $producto->id_producto }}">{{ $producto->nombre }}</option>
     @endforeach
@@ -52,8 +52,7 @@ value="{{$atencion->resultado}}">
 </div>
 <div class="col-md-6">
 <label for="obser" class="form-label">Observaciones</label>
-<input type="text" name="obser" id="obser" class="form-control"
-value="{{$atencion->observaciones}}">
+<textarea name="obser" id="obser" class="form-control">{{$atencion->observaciones}}</textarea>
 </div>
 <div class="col-md-6">
 <label for="fecha" class="form-label">Fecha</label>

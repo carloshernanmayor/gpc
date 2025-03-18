@@ -80,11 +80,21 @@ class AtencionController extends Controller
      */
     public function edit($id)
     {
+        $atencion=Atencion::findOrFail($id);
         $atend = Atencion::where('id_vendedor', auth()->user()->id_vendedor)->pluck('id_cliente'); 
         $clientes =cliente::whereIn('id_cliente', $atend)->get();
-        $productos=producto::all();
+        $idproducto = optional($atencion->producto)->id_producto;
+        if ($idproducto) {
+        $productos = Producto::where('id_producto', '!=', $idproducto)->get();
+        } else {
+        $productos = Producto::all();
+        }
+        $idguion = optional($atencion->guion)->id_guion;
+        if ($idguion) {
+        $guiones = guion::where('id_guion', '!=', $idguion)->get();
+        } else {
         $guiones=guion::all();
-        $atencion=Atencion::findOrFail($id);
+        }
         return view("Atencion.edit",compact('atencion','clientes','productos','guiones'));
     }
 
