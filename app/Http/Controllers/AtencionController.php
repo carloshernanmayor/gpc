@@ -80,8 +80,12 @@ class AtencionController extends Controller
      */
     public function edit($id)
     {
+        $atend = Atencion::where('id_vendedor', auth()->user()->id_vendedor)->pluck('id_cliente'); 
+        $clientes =cliente::whereIn('id_cliente', $atend)->get();
+        $productos=producto::all();
+        $guiones=guion::all();
         $atencion=Atencion::findOrFail($id);
-        return view("Atencion.edit",["atencion"=>$atencion]);
+        return view("Atencion.edit",compact('atencion','clientes','productos','guiones'));
     }
 
     /**
@@ -94,12 +98,13 @@ class AtencionController extends Controller
     public function update(Request $request, $id)
     {
         $atencion=Atencion::findOrFail($id);
-        $atencion->cliente=$request->get('cliente');
-        $atencion->cliente=$request->get('producto');
-        $atencion->cliente=$request->get('canal');
-        $atencion->cliente=$request->get('resultado');
-        $atencion->cliente=$request->get('obser');
-        $atencion->cliente=$request->get('fecha');
+        $atencion->id_cliente=$request->get('cliente');
+        $atencion->id_vendedor=auth()->user()->id_vendedor;
+        $atencion->id_producto=$request->get('producto');
+        $atencion->id_guion=$request->get('guion');
+        $atencion->fecha=$request->get('fecha');
+        $atencion->resultado=$request->get('resultado');
+        $atencion->observaciones=$request->get('obser');
         $atencion->update();
         return Redirect::to('atencion');
     }

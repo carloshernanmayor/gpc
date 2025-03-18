@@ -17,20 +17,33 @@
 {{Form::open(array('action'=>array('App\Http\Controllers\AtencionController@update', $atencion->id_atencion),'method'=>'patch'))}}
 <div class="row g-3">
 <div class="col-md-4">
-<label for="cliente " class="form-label">Cliente</label>
-<input type="number" name="cliente" id="cliente"
-class="form-control"
-value="{{$atencion->id_cliente}}">
+<label for="cliente">Clientes</label>
+<select name="cliente" id="cliente">
+<option  selected="selected" value="{{$atencion->id_cliente}}">{{$atencion->cliente->nombre}}</option>
+    @foreach($clientes as $cliente)
+        <option value="{{ $cliente->id_cliente }}">{{ $cliente->nombre }}</option>
+    @endforeach
+</select>
 </div>
 <div class="col-md-4">
-<label for="producto" class="form-label">Producto</label>
-<input type="text" name="producto" id="producto" class="form-control"
-value="{{$atencion->id_producto}}">
+<label for="producto">Productos</label>
+<select name="producto" id="producto">
+<option value="{{$atencion->id_producto}}">{{$atencion->producto->nombre}}</option>
+    @foreach($productos as $producto)
+        <option value="{{ $producto->id_producto }}">{{ $producto->nombre }}</option>
+    @endforeach
+
+</select>
 </div>
 <div class="col-4">
-<label for="canal" class="form-label">canal</label>
-<input type="text" name="canal" id="canal" class="form-control"
-value="{{$atencion->id_guion}}">
+<label for="guion">Mensaje</label>
+<select name="guion" id="guion">
+<option value="{{$atencion->id_guion}}">{{$atencion->guion->mensaje ?? 'ninguno' }}</option>
+    @foreach($guiones as $guion)
+        <option value="{{ $guion->id_guion }}">{{ $guion->mensaje }}</option>
+    @endforeach
+
+</select>
 </div>
 <div class="col-6">
 <label for="resultado" class="form-label">Resultado</label>
