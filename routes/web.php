@@ -20,16 +20,16 @@ Route::get('/', function () {
 
 
 
-Route::get('imprimircliente','App\Http\Controllers\PdfController@imprimirCliente')->name('id_cliente');
-Route::get('imprimirvendedor','App\Http\Controllers\PdfController@imprimirVendedor')->name('id_vendedor');
-Route::get('imprimirproducto','App\Http\Controllers\PdfController@imprimirProducto')->name('id_producto');
-Route::get('imprimirguion','App\Http\Controllers\PdfController@imprimirGuion')->name('id_guion');
-Route::get('imprimiratencion','App\Http\Controllers\PdfController@imprimirAtencion')->name('id_atencion');
-Route::resource('cliente', 'App\Http\Controllers\clienteController');
-Route::resource('vendedor', 'App\Http\Controllers\vendedorController');
-Route::resource('producto', 'App\Http\Controllers\productoController');
-Route::resource('guion', 'App\Http\Controllers\guionController');
-Route::resource('atencion', 'App\Http\Controllers\AtencionController');
+Route::get('imprimircliente','App\Http\Controllers\PdfController@imprimirCliente')->name('id_cliente')->middleware('auth');
+Route::get('imprimirvendedor','App\Http\Controllers\PdfController@imprimirVendedor')->name('id_vendedor')->middleware('auth');
+Route::get('imprimirproducto','App\Http\Controllers\PdfController@imprimirProducto')->name('id_producto')->middleware('auth');
+Route::get('imprimirguion','App\Http\Controllers\PdfController@imprimirGuion')->name('id_guion')->middleware('auth');
+Route::get('imprimiratencion','App\Http\Controllers\PdfController@imprimirAtencion')->name('id_atencion')->middleware('auth');
+Route::resource('cliente', 'App\Http\Controllers\clienteController')->middleware('auth');
+Route::resource('vendedor', 'App\Http\Controllers\vendedorController')->middleware('auth');
+Route::resource('producto', 'App\Http\Controllers\productoController')->middleware('auth');
+Route::resource('guion', 'App\Http\Controllers\guionController')->middleware('auth');
+Route::resource('atencion', 'App\Http\Controllers\AtencionController')->middleware('auth');
 
 
 
@@ -37,8 +37,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/profile', 'App\Http\Controllers\vendedorController@profile');
-Route::post('atencion/create', 'App\Http\Controllers\AtencionController@show');
+Route::get('/profile', 'App\Http\Controllers\vendedorController@profile')->middleware('auth');
 
-Route::get('logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout');
+Route::get('logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout')->middleware('auth');
 
