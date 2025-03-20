@@ -18,6 +18,7 @@ class Users extends Migration
             $table->unsignedBigInteger('id_vendedor');
             $table->string('name');
             $table->string('email')->unique();
+            $table->enum('tipo',['vendedor', 'admin'])->default('vendedor');
             $table->string('avatar');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

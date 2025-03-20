@@ -36,7 +36,10 @@ Route::resource('atencion', 'App\Http\Controllers\AtencionController')->middlewa
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+Route::get('/homeven', [App\Http\Controllers\HomeController::class, 'index'])->name('homeven');
+Route::get('/atencionadmin', [App\Http\Controllers\AtencionController::class, 'indexAdmin'])->name('atencionadmin');
+Route::get('/createatenadmin', [App\Http\Controllers\AtencionController::class, 'createAdmin'])->name('createatenadmin');
+Route::get('/editatenadmin', [App\Http\Controllers\AtencionController::class, 'editAdmin'])->name('editatenadmin');
 Route::get('/profile', 'App\Http\Controllers\vendedorController@profile')->middleware('auth');
 
 Route::get('logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout')->middleware('auth');

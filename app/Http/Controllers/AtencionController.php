@@ -19,10 +19,18 @@ class AtencionController extends Controller
      */
     public function index()
     {
-        
+
             $aten=Atencion::orderBy('id_atencion','ASC')->paginate(10)->where('id_vendedor', auth()->user()->id_vendedor );
             return view('Atencion.index',compact('aten'));
     
+        
+    }
+
+    public function indexAdmin()
+    {
+        
+            $aten=Atencion::all();
+            return view('Atencion.indexadmin',compact('aten'));
         
     }
 
@@ -38,6 +46,11 @@ class AtencionController extends Controller
         $clientes =cliente::whereIn('id_cliente', $atend)->orderBy('id_cliente', 'ASC')->get();
         $productos=producto::all();
         return view('atencion.create', compact('guiones', 'clientes','productos'));
+    }
+
+    public function createAdmin()
+    {
+        return view('atencion.createadmin');
     }
 
     /**
@@ -96,6 +109,11 @@ class AtencionController extends Controller
         $guiones=guion::all();
         }
         return view("Atencion.edit",compact('atencion','clientes','productos','guiones'));
+    }
+
+    public function editAdmin($id){
+        return view('Atencion.editadmin');
+
     }
 
     /**
