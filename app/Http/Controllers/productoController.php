@@ -20,6 +20,13 @@ class productoController extends Controller
 
     }
 
+    public function indexAdmin(){
+        $posproducto=producto::orderBy('id_producto','DESC')->paginate(10);
+        //dd('$posproductoservicio');
+        return view('producto.indexadmin',compact('posproducto'));
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *

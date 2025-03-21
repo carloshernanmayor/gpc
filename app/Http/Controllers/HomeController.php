@@ -25,6 +25,7 @@ class HomeController extends Controller
     { 
         if (auth()->user()->tipo== 'admin') {
             return view('home');
+
                 }
         return view('homevendedor');
     }

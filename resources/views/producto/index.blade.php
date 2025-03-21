@@ -1,4 +1,4 @@
-@extends('home')
+@extends('homevendedor')
 @section('titulo')
    Productos 
 @endsection('titulo')
@@ -7,9 +7,7 @@
 
 <div class="row">
 <div class="col-md-9">
-   <a href="{{url('/Final_proyect/gpc/public/producto/create')}}" class="pull-right">
-<button class="btn btn-success">Crear producto</button> </a>
-
+   
 
 <a href="{{url('imprimirproducto')}}" class="pull-right"><button class="btn btn-success">Imprimir Pdf</button> </a> 
 
@@ -39,12 +37,6 @@
 <td>{{ $pos->sector}}</td>
 <td>{{ $pos->dimensiones }}</td>
 <td>{{ $pos->fecha_creacion}}</td>
-<td>
-<a href="{{URL::action('App\Http\Controllers\productoController@edit',$pos->id_producto)}}"><button class="btn btn-primary">Actualizar</button></a>
-<a href="" data-toggle="modal" data-target="#modal-delete-{{$pos->id_producto}}">
-<button type="button" class="btn btn-danger"> Eliminar</button>
-</a>
-</td>
 </tr>
 @include('producto.modal')
 @endforeach

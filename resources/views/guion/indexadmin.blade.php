@@ -1,4 +1,4 @@
-@extends('homevendedor')
+@extends('home')
 @section('titulo')
    Guiones
 @endsection('titulo')

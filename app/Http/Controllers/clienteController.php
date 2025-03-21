@@ -24,6 +24,14 @@ return view('clientes.index', compact('clientes'));
 
     }
 
+    public function indexAdmin(){
+
+        $clientes=cliente::all();
+        
+        return view('clientes.indexadmin', compact('clientes'));
+        
+            }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -105,6 +113,11 @@ return view('clientes.index', compact('clientes'));
 
         $cliente=cliente::findOrFail($ide);
         return view("clientes.edit",["cliente"=>$cliente]);
+    } 
+
+    public function editAdmin($ide){
+        $cliente=cliente::findOrFail($ide);
+        return view("clientes.editadmin",["cliente"=>$cliente]);
     } 
 
     /**

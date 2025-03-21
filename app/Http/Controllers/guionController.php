@@ -20,6 +20,14 @@ class guionController extends Controller
 
     }
 
+    public function indexAdmin(){
+        $guiones=guion::orderBy('id_guion','DESC')->paginate(10);
+        //dd('$poscliente');
+        return view('guion.index',compact('guiones'));
+
+    }
+
+
     /**
      * Show the form for creating a new resource.
      *

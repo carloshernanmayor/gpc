@@ -1,15 +1,14 @@
 @extends('home')
 
 @section('titulo')
-  Tus Clientes
+   Clientes
 @endsection('titulo')
 
 @section('contenido')
 
 <div class="row">
 <div class="col-md-9">
-   <a href="{{url('cliente/create')}}" class="pull-right">
-<button class="btn btn-success">Crear cliente</button> </a>
+
 
 
 

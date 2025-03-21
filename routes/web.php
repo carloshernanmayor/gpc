@@ -40,6 +40,14 @@ Route::get('/homeven', [App\Http\Controllers\HomeController::class, 'index'])->n
 Route::get('/atencionadmin', [App\Http\Controllers\AtencionController::class, 'indexAdmin'])->name('atencionadmin');
 Route::get('/createatenadmin', [App\Http\Controllers\AtencionController::class, 'createAdmin'])->name('createatenadmin');
 Route::get('/editatenadmin', [App\Http\Controllers\AtencionController::class, 'editAdmin'])->name('editatenadmin');
+
+Route::get('/clientesadmin', [App\Http\Controllers\clienteController::class, 'indexAdmin'])->name('clientesadmin');
+Route::get('/editclientesadmin', [App\Http\Controllers\clienteController::class, 'editAdmin'])->name('editclientesadmin');
+
+Route::get('/productosadmin', [App\Http\Controllers\productoController::class, 'indexAdmin'])->name('productosadmin');
+
+Route::get('/guionadmin', [App\Http\Controllers\guionController::class, 'guionAdmin'])->name('guionadmin');
+
 Route::get('/profile', 'App\Http\Controllers\vendedorController@profile')->middleware('auth');
 
 Route::get('logout', 'App\Http\Controllers\Auth\LoginController@logout')->name('logout')->middleware('auth');
