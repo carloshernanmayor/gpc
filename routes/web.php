@@ -46,7 +46,7 @@ Route::get('/editclientesadmin', [App\Http\Controllers\clienteController::class,
 
 Route::get('/productosadmin', [App\Http\Controllers\productoController::class, 'indexAdmin'])->name('productosadmin');
 
-Route::get('/guionadmin', [App\Http\Controllers\guionController::class, 'guionAdmin'])->name('guionadmin');
+Route::get('/guionadmin', [App\Http\Controllers\guionController::class, 'indexAdmin'])->name('guionadmin');
 
 Route::get('/profile', 'App\Http\Controllers\vendedorController@profile')->middleware('auth');
 

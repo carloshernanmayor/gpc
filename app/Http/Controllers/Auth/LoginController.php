@@ -42,7 +42,7 @@ class LoginController extends Controller
      protected function redirectTo(){
 
         if (auth()->user()->tipo == 'admin') {
-          return view('/home');
+          return 'home';
         }
         return 'homeven';
      }

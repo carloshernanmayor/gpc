@@ -49,7 +49,7 @@
                     <img src= "{{ asset('image/acuerdo (2).png') }}" alt="gpc" width="80" height="80" style="margin:10px">
                 </div>
                 
-                <a class="nav-link botonGPC" href="/Final_proyect/gpc/public/cliente" style="color: #000000">
+                <a class="nav-link botonGPC" href="/Final_proyect/gpc/public/clientesadmin" style="color: #000000">
                     <p align="center"><img src= "{{ asset('image/posible_cliente.png') }}" alt="posible_cliente" width="70" height="70"></p>
                     <p align="center"><span>Clientes</span></p>
                 </a>
@@ -57,15 +57,15 @@
                     <p align="center"><img src= "{{ asset('image/vendedor.png') }}" alt="vendedor" width="70" height="70"></p>
                     <p align="center"><span>Vendedores</span></p>
                 </a>
-                <a class="nav-link botonGPC" href="/Final_proyect/gpc/public/producto" style="color: #000000">
+                <a class="nav-link botonGPC" href="/Final_proyect/gpc/public/productosadmin" style="color: #000000">
                     <p align="center"><img src= "{{ asset('image/productoservicio.png') }}" alt="producto_servicio" width="70" height="70"></p>
                     <p align="center"><span>Productos</span></p>
                 </a>
-                <a class="nav-link botonGPC" href="/Final_proyect/gpc/public/guion" style="color: #000000">
+                <a class="nav-link botonGPC" href="/Final_proyect/gpc/public/guionadmin" style="color: #000000">
                     <p align="center"><img src= "{{ asset('image/marketing.png') }}" alt="guion" width="70" height="70"></p>
                     <p align="center"><span>Guion de ventas</span></p>
                 </a>
-                <a class="nav-link botonGPC" href="/Final_proyect/gpc/public/atencion" style="color: #000000">
+                <a class="nav-link botonGPC" href="/Final_proyect/gpc/public/atencionadmin" style="color: #000000">
                     <p align="center"><img src= "{{ asset('image/marketing.png') }}" alt="marketing" width="70" height="70"></p>
                     <p align="center"><span>Tus atenciones</span></p>
                 </a>
