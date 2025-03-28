@@ -110,7 +110,8 @@ class vendedorController extends Controller
     public function destroy($id)
     {
         $vendedor=vendedor::findOrFail($id);
-        $vendedor->delete();
+        $vendedor->estado= "inactivo";
+        $vendedor->save();
         return Redirect::to('vendedor');
      }
 

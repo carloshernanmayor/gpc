@@ -96,7 +96,7 @@ placeholder="Digite el nombre del contacto">
 </div>
 <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
 <div class="form-group"> <br>
-<button class="btn btn-primary" type="submit"><span
+<button id="boton" class="btn btn-primary" type="submit"><span
 class="glyphicon glyphicon-ok"></span> Guardar</button>
 <button class="btn btn-danger" type="reset"><span
 class="glyphicon glyphicon-remove"></span> Vaciar Campos</button>
@@ -105,5 +105,7 @@ class="glyphicon glyphicon-remove"></span> Vaciar Campos</button>
 </div>
 </div>
 </div>
+
+
 {!!Form::close()!!}
 @endsection('contenido')

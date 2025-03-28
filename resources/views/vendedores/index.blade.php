@@ -40,13 +40,18 @@
 <td>{{ $pos->estado }}</td>
 
 <td>
+@if($pos->estado=="activo")
 <a href="{{URL::action('App\Http\Controllers\vendedorController@edit',$pos->id_vendedor)}}"><button class="btn btn-primary">Actualizar</button></a>
 <a href="" data-toggle="modal" data-target="#modal-delete-{{$pos->id_vendedor}}">
-<button type="button" class="btn btn-danger"> Eliminar</button>
+<button type="button" class="btn btn-danger"> Inhabilitar</button>
 </a>
+@else
+<a href="{{URL::action('App\Http\Controllers\vendedorController@edit',$pos->id_vendedor)}}"><button class="btn btn-primary">Actualizar</button></a>
+@endif
 </td>
 </tr>
 @include('vendedores.modal')
+@include('vendedores.modal2')
 @endforeach
 </tbody> </table>
 </div></div>

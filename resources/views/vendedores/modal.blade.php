@@ -13,7 +13,7 @@ Close"></button>
 </div>
 <div class="modal-footer">
 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-<button type="submit" class="btn btn-primary">Confirmar</button>
+<button data-toggle="modal" data-target="modal-delete2"type="submit" class="btn btn-primary">Confirmar</button>
 </div>
 </div>
 </div>
