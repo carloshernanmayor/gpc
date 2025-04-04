@@ -115,4 +115,10 @@ class vendedorController extends Controller
         return Redirect::to('vendedor');
      }
 
+     public function habilitar($id){
+     $vendedor=vendedor::findOrFail($id);
+     $vendedor->estado= "activo";
+     $vendedor->save();
+     }
+
     }

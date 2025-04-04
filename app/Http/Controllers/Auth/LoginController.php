@@ -39,12 +39,12 @@ class LoginController extends Controller
      * @var string
      */
 
-     protected function redirectTo(){
+     public function redirectTo(){
 
         if (auth()->user()->tipo == 'admin') {
-          return 'home';
+          return redirect()->route('home');
         }
-        return 'homeven';
+        return redirect()->route('homeven');
      }
     
     /**

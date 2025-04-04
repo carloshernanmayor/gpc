@@ -23,6 +23,7 @@ $clientes =cliente::whereIn('id_cliente', $atend)->orderBy('id_cliente', 'ASC')-
 return view('clientes.index', compact('clientes'));
 
     }
+    
 
     public function indexAdmin(){
 

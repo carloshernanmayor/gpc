@@ -5,28 +5,52 @@ namespace Tests\Unit;
 use PHPUnit\Framework\TestCase;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
-use App\Http\Controllers\posibleclienteController;
+use App\Http\Controllers\clienteController;
 
-class PosibleClienteControllerTest extends TestCase
+class ClienteTest extends TestCase
 {
     use RefreshDatabase;
 
     /** @test */
-    public function index_retorna_vista_posible_cliente()
-    {
-        $controller = new posibleclienteController();
-        $response = $controller->index();
+    public function Test_cliente_index()
+{
+    // 1. Simulate a logged-in user
+    $user = User::factory()->create([
+        'id_vendedor' => 1, // Ensure this matches your Atencion data
+    ]);
+    $this->actingAs($user);
 
-       $response->assertViewIs('posibles_clientes.index');
+    // 2. Create fake Atencion records
+    $clientes = Cliente::factory(3)->create(); // Creates 3 clients
+    foreach ($clientes as $cliente) {
+        Atencion::factory()->create([
+            'id_vendedor' => $user->id_vendedor,
+            'id_cliente' => $cliente->id_cliente,
+        ]);
     }
 
-    public function create_retorna_vista_posibles_clientes_create()
+    // 3. Make a GET request to the index route
+    $response = $this->get(route('clientes.index'));
+
+    // 4. Assert response is OK and contains expected data
+    $response->assertStatus(200);
+    $response->assertViewIs('clientes.index');
+    $response->assertViewHas('clientes', function ($clientes) {
+        return $clientes->count() === 3; // Should return 3 clients
+    });
+}
+
+
+  /** @test */
+    public function test_clientes_create()
     {
-        $controller = new posibleclienteController();
+        $controller = new clienteController();
         $response = $controller->create();
 
-        $response->assertViewIs('posibles_clientes.create');
+        $response->assertViewIs('clientes.create');
     }
+
+
 
     public function store_guarda_nuevo_posible_cliente_y_redirige_correctamente()
     {
@@ -44,7 +68,7 @@ class PosibleClienteControllerTest extends TestCase
         $response->assertRedirect('posibles_clientes.index');
 
 
-        $this->assertDatabaseHas('posible_cliente', [
+        $this->assertDatabaseHas('cliente', [
             'nombre' => 'Nombre de prueba',
             'identificacion' => '123456789',
             'telefono' => '555-1234',

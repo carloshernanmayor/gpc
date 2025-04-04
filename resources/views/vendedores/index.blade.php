@@ -47,6 +47,8 @@
 </a>
 @else
 <a href="{{URL::action('App\Http\Controllers\vendedorController@edit',$pos->id_vendedor)}}"><button class="btn btn-primary">Actualizar</button></a>
+
+
 @endif
 </td>
 </tr>
