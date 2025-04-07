@@ -11,10 +11,16 @@ class vendedorFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition():array
     {
         return [
-      
+            'nombre'=> fake()->name(),
+            'identificacion'=>fake()->unique()->numerify('##########'),
+            'telefono'=>fake()->phoneNumber,
+            'direccion'=>fake()->unique->address,
+            'correo'=>fake()->unique->safeEmail(),
+            'fecha_ingreso'=> now(),
+            'estado'=> 'activo',      
         ];
     }
 }
