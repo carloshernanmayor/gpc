@@ -14,11 +14,11 @@ class vendedorFactory extends Factory
     public function definition():array
     {
         return [
-            'nombre'=> fake()->name(),
-            'identificacion'=>fake()->unique()->numerify('##########'),
-            'telefono'=>fake()->phoneNumber,
-            'direccion'=>fake()->unique->address,
-            'correo'=>fake()->unique->safeEmail(),
+            'nombre'=>$this->faker->name(),
+            'identificacion'=>$this->faker->unique()->numerify('##########'),
+            'telefono'=>$this->faker->phoneNumber,
+            'direccion'=>$this->faker->unique->address,
+            'correo'=>$this->faker->unique->safeEmail(),
             'fecha_ingreso'=> now(),
             'estado'=> 'activo',      
         ];
