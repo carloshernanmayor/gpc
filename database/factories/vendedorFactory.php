@@ -11,10 +11,16 @@ class vendedorFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition():array
     {
         return [
-      
+            'nombre'=>$this->faker->name(),
+            'identificacion'=>$this->faker->unique()->numerify('##########'),
+            'telefono'=>$this->faker->phoneNumber,
+            'direccion'=>$this->faker->unique->address,
+            'correo'=>$this->faker->unique->safeEmail(),
+            'fecha_ingreso'=> now(),
+            'estado'=> 'activo',      
         ];
     }
 }

@@ -16,41 +16,34 @@ class loginTest extends TestCase
 
     public function test_validarusuario()
 {
-    // Create a vendedor
     $vendedor = Vendedor::factory()->create([
         'nombre' => 'Santiago',
         'identificacion' => "santiago",
-        'correo' => "santi@gmail.com", // Fixed typo in email
+        'correo' => "santi@gmail.com", 
         'telefono' => "3243455678",
         'direccion' => "vendedor",
         'estado' => 'activo',
         'fecha_ingreso' => now()
     ]);
 
-    // Create a user
     $user = User::factory()->create([
-        'id_vendedor' => $vendedor->id, // Link user to vendedor
+        'id_vendedor' => $vendedor->id,
         'name' => "Santiago",
-        'email' => "santi@gmail.com",  // Fixed typo in email
+        'email' => "santi@gmail.com",  
         'tipo' => "vendedor",
-        'password' => bcrypt('1234')  // Store hashed password
+        'password' => bcrypt('1234') 
     ]);
 
-    // Log in as the user
     $this->actingAs($user);
 
-    // Make an HTTP request instead of calling redirectTo()
     $response = $this->get('/homeven'); 
 
-    // Check if the response is successful
     $response->assertStatus(200);
-    
-    // Check if the user exists in the database
     $this->assertDatabaseHas('users', [
         'email' => $user->email,
+        'password'=>$user->password
     ]);
 
-    // Check if the correct view is returned
     $response->assertViewIs('homevendedor'); 
 }
 
