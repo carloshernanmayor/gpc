@@ -39,14 +39,12 @@ class LoginController extends Controller
      * @var string
      */
 
-     public function redirectTo(){
-
-        if (auth()->user()->tipo == 'admin') {
-          return redirect()->route('home');
-        }
-        return redirect()->route('homeven');
-     }
-    
+    public function redirectTo() {
+    if (auth()->user()->tipo == 'admin') {
+        return '/home';
+    }
+    return '/homeven';
+}
     /**
      * Create a new controller instance.
      *
