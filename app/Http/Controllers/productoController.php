@@ -15,14 +15,12 @@ class productoController extends Controller
      */
     public function index(){
         $posproducto=producto::orderBy('id_producto','DESC')->paginate(10);
-        //dd('$posproductoservicio');
         return view('producto.index',compact('posproducto'));
 
     }
 
     public function indexAdmin(){
         $posproducto=producto::orderBy('id_producto','DESC')->paginate(10);
-        //dd('$posproductoservicio');
         return view('producto.indexadmin',compact('posproducto'));
 
     }

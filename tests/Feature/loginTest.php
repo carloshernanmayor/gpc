@@ -1,50 +1,35 @@
 <?php
 
-namespace Tests\Feature;
+namespace Tests\Unit;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
-use App\Models\User;
-use App\Models\vendedor;
+use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Auth\LoginController;
+use App\Models\User;
+use Mockery;
 
-class loginTest extends TestCase
+class LoginControllerTest extends TestCase
 {
     use RefreshDatabase;
 
+    /** @test */
+    public function redirects_admin()
+    {
+        $user = User::factory()->make(['tipo' => 'admin']);
+        Auth::shouldReceive('user')->once()->andReturn($user);
+        $controller = new LoginController();
+        $result = $controller->redirectTo();
+        $this->assertEquals('/home', $result);
+    }
 
-    public function test_validarusuario()
-{
-    $vendedor = Vendedor::factory()->create([
-        'nombre' => 'Santiago',
-        'identificacion' => "santiago",
-        'correo' => "santi@gmail.com", 
-        'telefono' => "3243455678",
-        'direccion' => "vendedor",
-        'estado' => 'activo',
-        'fecha_ingreso' => now()
-    ]);
-
-    $user = User::factory()->create([
-        'id_vendedor' => $vendedor->id,
-        'name' => "Santiago",
-        'email' => "santi@gmail.com",  
-        'tipo' => "vendedor",
-        'password' => bcrypt('1234') 
-    ]);
-
-    $this->actingAs($user);
-
-    $response = $this->get('/homeven'); 
-
-    $response->assertStatus(200);
-    $this->assertDatabaseHas('users', [
-        'email' => $user->email,
-        'password'=>$user->password
-    ]);
-
-    $response->assertViewIs('homevendedor'); 
-}
-
+    /** @test */
+    public function redirects_seller()
+    {
+        $user = User::factory()->make(['tipo' => 'vendedor']);
+        Auth::shouldReceive('user')->once()->andReturn($user);
+        $controller = new LoginController();
+        $result = $controller->redirectTo();
+        $this->assertEquals('/homeven', $result);
+    }
 }

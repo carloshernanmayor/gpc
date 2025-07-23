@@ -9,20 +9,18 @@ use Illuminate\Support\Facades\Redirect;
 class guionController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * Display a listing of the resource
      *
      * @return \Illuminate\Http\Response
      */
     public function index(){
         $guiones=guion::orderBy('id_guion','DESC')->paginate(10);
-        //dd('$poscliente');
         return view('guion.index',compact('guiones'));
 
     }
 
     public function indexAdmin(){
         $guiones=guion::orderBy('id_guion','DESC')->paginate(10);
-        //dd('$poscliente');
         return view('guion.indexadmin',compact('guiones'));
 
     }

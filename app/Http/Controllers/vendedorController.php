@@ -16,7 +16,6 @@ class vendedorController extends Controller
      */
     public function index(){
         $vendedor=vendedor::orderBy('id_vendedor','ASC')->paginate(10);
-        //dd('$poscliente');
         return view('vendedores.index',compact('vendedor'));
 
     }
