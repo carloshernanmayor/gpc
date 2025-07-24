@@ -68,10 +68,10 @@ return view('clientes.index', compact('clientes'));
         $clientes->telefono = $request->get('telefono');
         $clientes->direccion = $request->get('direccion');
         $clientes->correo = $request->get('correo');
-        $clientes->contacto_nombre = $request->get('contacto_nombre');
-        $clientes->contacto_correo = $request->get('contacto_correo');
-        $clientes->contacto_telefono= $request->get('contacto_telefono');
-        $clientes->fecha_registro= $request->get('fecha_registro');
+        $clientes->contacto_nombre = $request->get('ncontacto');
+        $clientes->contacto_correo = $request->get('ccontacto');
+        $clientes->contacto_telefono= $request->get('tcontacto');
+        $clientes->fecha_registro= now();
         $clientes->save();  
         
         $nuevaatencion = new atencion;

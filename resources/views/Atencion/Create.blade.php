@@ -1,4 +1,4 @@
-@extends('home')
+@extends('homevendedor')
 @section('contenido')
 
 <div class="row">

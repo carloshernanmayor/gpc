@@ -7,8 +7,6 @@
 
 <div class="row">
 <div class="col-md-9">
-   <a href="{{url('guion/create')}}" class="pull-right">
-<button class="btn btn-success">Crear guion</button> </a>
 
 
 <a href="{{url('imprimirguion')}}" class="pull-right"><button class="btn btn-success">Imprimir Pdf</button> </a> 
@@ -33,10 +31,6 @@
 <td>{{ $pos->fecha_creacion }}</td>
 
 <td>
-<a href="{{URL::action('App\Http\Controllers\guionController@edit',$pos->id_guion)}}"><button class="btn btn-primary">Actualizar</button></a>
-<a href="" data-toggle="modal" data-target="#modal-delete-{{$pos->id_guion}}">
-<button type="button" class="btn btn-danger"> Eliminar</button>
-</a>
 </td>
 </tr>
 @include('guion.modal')

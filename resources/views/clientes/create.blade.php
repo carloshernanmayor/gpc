@@ -91,7 +91,7 @@ placeholder="Digite el telefono del contacto">
 <label for="fecha">fecha de registro</label>
 <input type="text" name="fecha"
 id="fecha" class="form-control"
-placeholder="Digite el nombre del contacto">
+placeholder="fecha de registro">
 </div>
 </div>
 <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">

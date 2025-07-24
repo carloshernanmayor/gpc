@@ -92,8 +92,7 @@
                                 data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <span class="mr-2 d-none d-lg-inline  small"  style="color: #000000">{{ auth()->user()->name }}</span>
                                 <img class="img-profile rounded-circle"
-                                     src="https://ui-avatars.com/api/?name={{auth::user()->name}}">
-                                     
+                                    src="{{ auth()->user()->avatar }}">
                             </a>
                             <!-- Dropdown - User Information -->
                             <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
@@ -184,7 +183,6 @@
             </div>
         </div>
     </div>
-<script src="{{ url('gpc/public/js/create.js') }}"></script>
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -194,7 +192,11 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for all pages-->
-   
+    <script src="js/sb-admin-2.min.js"></script>
+    <script src="{{ asset('js/sb-admin-2.min.js') }}"></script>
+
+    <script src="js/sb-admin-2.js"></script>
+    <script src="{{ asset('js/sb-admin-2.js') }}"></script>
 
     <!-- Page level plugins -->
     <script src="vendor/datatables/jquery.dataTables.min.js"></script>
@@ -202,8 +204,6 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
-
-
 
     
 
