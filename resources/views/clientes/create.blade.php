@@ -91,12 +91,12 @@ placeholder="Digite el telefono del contacto">
 <label for="fecha">fecha de registro</label>
 <input type="text" name="fecha"
 id="fecha" class="form-control"
-placeholder="fecha de registro">
+placeholder="Digite el nombre del contacto">
 </div>
 </div>
 <div class="col-lg-6 col-md-12 col-sm-6 col-xs-12">
 <div class="form-group"> <br>
-<button id="boton" class="btn btn-primary" type="submit"><span
+<button class="btn btn-primary" type="submit"><span
 class="glyphicon glyphicon-ok"></span> Guardar</button>
 <button class="btn btn-danger" type="reset"><span
 class="glyphicon glyphicon-remove"></span> Vaciar Campos</button>
@@ -105,7 +105,5 @@ class="glyphicon glyphicon-remove"></span> Vaciar Campos</button>
 </div>
 </div>
 </div>
-
-
 {!!Form::close()!!}
 @endsection('contenido')

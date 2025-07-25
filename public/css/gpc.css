@@ -1,6 +1,5 @@
 .encabezado{
-    background-color: #b3d77d!important;
-    height: 150px;
+    height: 120px;
 }
 .botonGPC{
     margin-top: 5px;
@@ -8,8 +7,9 @@
     
 }
 .tablasGPC{
-    padding-left:10rem;
-    padding-right: 10rem;
+    padding-left:15%;
+    padding-right: 15%;
+    
 }
 h1{
     color: white;
@@ -20,29 +20,196 @@ h1{
     align-items: center;
 }
 
+.centrar-logo{	
+	height: 100vh;
+	align-content: center;
+}
+
 .boton-ingresar {
-	box-shadow: 3px 4px 0px 0px #1564ad;
-	background:linear-gradient(to bottom, #79bbff 5%, #378de5 100%);
+	box-shadow: 3px 4px 0px 0px #AA6C37;
+	background:linear-gradient(to bottom, #D7D6D4 5%, #0A1626 100%);
 	background-color:#79bbff;
 	border-radius:5px;
-	border:1px solid #337bc4;
+	border:1px solid #878C8F;
 	display:inline-block;
 	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:17px;
-	font-weight:bold;
+	color:#0A1626;	
+	font-size:18px;
+	font-family: "Candal", sans-serif;
+	font-weight: 400;
+	font-style: normal;
 	padding:12px 44px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #528ecc;
+	text-shadow:0px 1px 0px #F7F7F7;
 	align-items: center;
 }
 
 .boton-ingresar:hover {
-	background:linear-gradient(to bottom, #378de5 5%, #79bbff 100%);
+	background:linear-gradient(to bottom, #D5833C 5%, #0A1626 100%);
 	background-color:#378de5;
 }
 .boton-ingresar:active {
 	position:relative;
 	top:1px;
+}
+
+.boton-home {
+	box-shadow: 3px 4px 0px 0px #AA6C37;
+	background:linear-gradient(to bottom, #D7D6D4 5%, #0A1626 100%);
+	background-color:#79bbff;
+	border-radius:5px;
+	border:1px solid #878C8F;
+	display:inline-block;
+	cursor:pointer;
+	color:#0A1626;	
+	font-size:18px;
+	font-family: "Candal", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	padding:4px 44px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #F7F7F7;
+	align-items: center;
+}
+
+.boton-home:hover {
+	background:linear-gradient(to bottom, #D5833C 5%, #0A1626 100%);
+	background-color:#378de5;
+}
+.boton-home:active {
+	position:relative;
+	top:1px;
+}
+
+body{
+	
+	background: radial-gradient(#F7F7F7, #0A1626);
+	margin: 0px;
+}
+
+.bg-white {
+    background-color: #D7D6D4 !important;
+}
+
+.card {
+    background-color: #F7F7F7;
+    border: 1px solid #e3e6f0;
+}
+
+.card-header {
+    background-color: #0A1626;
+    border-bottom: 1px solid #e3e6f0;
+	font-size:20px;
+	font-family: "Candal", sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	color: #F7F7F7;
+	text-align: center;
+
+}
+
+.contenedor-vendedor {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.card-vendedor {
+    width: calc(50% - 10px); /* Dos tarjetas por fila con un espacio entre ellas */
+    box-sizing: border-box;
+    text-align: center;
+    border: 2px solid #878C8F; /* Marco verde para resaltar las tarjetas */
+    border-radius: 10px; /* Bordes redondeados */
+    padding: 10px; /* Espacio interno para un mejor diseño */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura que el contenido se distribuya uniformemente */
+    height: 380px; /* Tamaño fijo para todas las tarjetas */
+}
+
+.card-vendedor img {
+    width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+    height: 200px; /* Establece una altura fija para las imágenes */
+    object-fit: cover; /* Ajusta la imagen sin deformarla */
+    border-radius: 5px; /* Bordes redondeados para las imágenes */
+}
+
+.card h3 {
+	margin: 10px 0;
+}
+.card p {
+	color: #666;
+}
+
+
+
+
+.btn {
+
+    margin-top: 5px;
+}
+
+.table-responsive {
+  
+    overflow-x: clip;
+    
+}
+
+#wrapper #content-wrapper {
+	background: radial-gradient(#F7F7F7, #0A1626);
+}
+
+.card-body {
+
+    background-color:#D7D6D4;
+}
+
+.btn-success {
+    color: #0A1626;
+    background-color: #F69A3A;
+    border-color: #878C8F;
+	font-size:12px;
+	font-family: "Candal", sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.btn-primary {
+    color: #0A1626;
+    background-color: #006FBB;
+    border-color: #006FBB;
+	font-size:12px;
+	font-family: "Candal", sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.btn-danger {
+    color: #0A1626;
+    background-color: #e74a3b;
+    border-color: #e74a3b;
+	font-size:12px;
+	font-family: "Candal", sans-serif;
+	font-weight: 300;
+	font-style: normal;
+}
+
+.btn-info {
+	font-size:12px;
+	font-family: "Candal", sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	color: #0A1626;
+}
+
+.btn-secondary {
+	font-size:12px;
+	font-family: "Candal", sans-serif;
+	font-weight: 300;
+	font-style: normal;
+	color: #0A1626;
 }

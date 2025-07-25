@@ -7,13 +7,18 @@
         <title>GPC</title>
 
         <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Candal&display=swap" rel="stylesheet">
 
         <link href="{{ asset('css/gpc.css') }}" rel="stylesheet">
+        <link rel="icon" href="{{ asset('image/logo.svg') }}">
+        
     </head>
-    <body class="antialiased">
+    <body>
+        <div class="centrar-logo">
     <div class="logo" >
-                    <img src= "{{ asset('image/acuerdo (2).png') }}" alt="gpc" width="100" height="100" style="margin:10px">
+                    <img src= "{{ asset('image/logo.svg') }}" alt="gpc" width="200" height="200" style="margin:10px">
                 </div>
         <div class="relative flex  justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
             @if (Route::has('login'))
@@ -28,5 +33,6 @@
 
 
         </div>
+</div>
     </body>
 </html>

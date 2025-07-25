@@ -17,39 +17,28 @@
 
 </div></div>
 <div class="row">
-<div class="table-responsive">
-  
+<div class="container">
+  <div class="row">
+    @foreach($aten as $atencion)
+      <div class="col-md-4 mb-3">
+        <div class="card">
+          <div class="card-body">
+            <h5 class="card-title">{{ $atencion->vendedor->nombre }}</h5>
+            <p class="card-text"><strong>Cliente:</strong> {{ $atencion->cliente->nombre }}</p>
+            <p class="card-text"><strong>Producto:</strong> {{ $atencion->producto->nombre ?? 'Ninguno' }}</p>
+            <p class="card-text"><strong>Canal:</strong> {{ $atencion->guion->canal ?? 'Ninguno' }}</p>
+            <p class="card-text"><strong>Mensaje:</strong> {{ $atencion->guion->mensaje ?? 'Ninguno' }}</p>
+            <p class="card-text"><strong>Resultado:</strong> {{ $atencion->resultado }}</p>
+            <p class="card-text"><strong>Observaciones:</strong> {{ $atencion->observaciones }}</p>
+            <p class="card-text"><strong>Fecha:</strong> {{ $atencion->fecha }}</p>
+            <a href="{{ URL::action('App\Http\Controllers\AtencionController@edit', $atencion->id_atencion) }}" class="btn btn-primary">Actualizar</a>
+          </div>
+        </div>
+      </div>
+    @endforeach
+  </div>
+</div>
 
-<table class="table table-striped table-hover">
-<thead>
-   
-<th>Cliente</th>
-<th>Producto</th>
-<th>Canal</th>
-<th>Mensaje</th>
-<th>Resultado</th>
-<th>Observaciones</th>
-<th>fecha</th>
-
-
-</thead>
-<tbody>
-@foreach($aten as $atencion)
-<tr>
-<td>{{ $atencion->cliente->nombre}}</td>
-<td>{{ $atencion->producto->nombre ?? 'Ninguno' }}</td>
-<td>{{ $atencion->guion->canal  ?? 'Ninguno' }}</td>
-<td>{{ $atencion->guion->mensaje ?? 'Ninguno' }}</td>
-<td>{{ $atencion->resultado }}</td>
-<td>{{ $atencion->observaciones }}</td>
-<td>{{ $atencion->fecha }}</td>
-
-<a href="{{URL::action('App\Http\Controllers\AtencionController@edit',$atencion->id_atencion)}}"><button class="btn btn-primary">Actualizar</button></a>
-
-</td>
-</tr>
-@endforeach
-</tbody> </table>
 </div></div>
 
 <div class="modal fade" id="ccmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"

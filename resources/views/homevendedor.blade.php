@@ -16,6 +16,9 @@
     <link
         href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
         rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Candal&display=swap" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     
@@ -25,7 +28,7 @@
 
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
-
+    <link rel="icon" href="{{ asset('image/logo.svg') }}">
     
 
 </head>
@@ -38,82 +41,64 @@
 
 
         <!-- Content Wrapper -->
-        <div id="content-wrapper" class="d-flex flex-column" style="background-color:#613d97">
+        <div id="content-wrapper" class="d-flex flex-column" style="background: radial-gradient(#F7F7F7, #0A1626);">
 
             <!-- Main Content -->
             <div id="content">
 
                 <!-- Topbar -->
-                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow encabezado">
-                <div >
-                    <img src= "{{ asset('image/acuerdo (2).png') }}" alt="gpc" width="80" height="80" style="margin:10px">
-                </div>
-                
-                <a class="nav-link botonGPC" href="/Final_proyect/gpc/public/cliente" style="color: #000000">
-                    <p align="center"><img src= "{{ asset('image/posible_cliente.png') }}" alt="posible_cliente" width="70" height="70"></p>
-                    <p align="center"><span>Clientes</span></p>
+<nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow encabezado">
+    <div>
+        <img src="{{ asset('image/logo.svg') }}" alt="gpc" width="80" height="80" style="margin:10px">
+    </div>
+
+    <!-- Contenedor centrado para los botones -->
+    <div class="container d-flex justify-content-center">
+        <div class="d-flex justify-content-center align-items-center gap-4">
+            <a class="nav-link botonGPC text-center" href="/Final_proyect/gpc/public/cliente" style="color: #000000">
+                <img src="{{ asset('image/posible_cliente.png') }}" alt="posible_cliente" width="50" height="50">
+                <p><span>Clientes</span></p>
+            </a>
+
+            <a class="nav-link botonGPC text-center" href="/Final_proyect/gpc/public/producto" style="color: #000000">
+                <img src="{{ asset('image/productoservicio.png') }}" alt="producto_servicio" width="50" height="50">
+                <p><span>Productos</span></p>
+            </a>
+
+            <a class="nav-link botonGPC text-center" href="/Final_proyect/gpc/public/guion" style="color: #000000">
+                <img src="{{ asset('image/marketing.png') }}" alt="guion" width="50" height="50">
+                <p><span>Guion de ventas</span></p>
+            </a>
+
+            <a class="nav-link botonGPC text-center" href="/Final_proyect/gpc/public/atencion" style="color: #000000">
+                <img src="{{ asset('image/marketing.png') }}" alt="marketing" width="50" height="50">
+                <p><span>Tus atenciones</span></p>
+            </a>
+        </div>
+    </div>
+
+    <!-- Topbar Navbar -->
+    <ul class="navbar-nav ml-auto">
+        <div class="topbar-divider d-none d-sm-block"></div>
+        <li class="nav-item dropdown no-arrow">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <span class="mr-2 d-none d-lg-inline small" style="color: #000000">{{ auth()->user()->name }}</span>
+                <img class="img-profile rounded-circle" src="{{ auth()->user()->avatar }}">
+            </a>
+            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a class="dropdown-item" href="profile">
+                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>Perfil
                 </a>
-                <a class="nav-link botonGPC" href="/Final_proyect/gpc/public/producto" style="color: #000000">
-                    <p align="center"><img src= "{{ asset('image/productoservicio.png') }}" alt="producto_servicio" width="70" height="70"></p>
-                    <p align="center"><span>Productos</span></p>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>Cerrar sesión
                 </a>
-                <a class="nav-link botonGPC" href="/Final_proyect/gpc/public/guion" style="color: #000000">
-                    <p align="center"><img src= "{{ asset('image/marketing.png') }}" alt="guion" width="70" height="70"></p>
-                    <p align="center"><span>Guion de ventas</span></p>
-                </a>
-                <a class="nav-link botonGPC" href="/Final_proyect/gpc/public/atencion" style="color: #000000">
-                    <p align="center"><img src= "{{ asset('image/marketing.png') }}" alt="marketing" width="70" height="70"></p>
-                    <p align="center"><span>Tus atenciones</span></p>
-                </a>
-                
-                    <!-- Sidebar Toggle (Topbar) -->
+            </div>
+        </li>
+    </ul>
+</nav>
+<!-- End of Topbar -->
 
-
-                    <!-- Topbar Search -->
-
-
-                    <!-- Topbar Navbar -->
-                    <ul class="navbar-nav ml-auto">
-
-                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-
-
-                        <!-- Nav Item - Alerts -->
-
-
-                        <!-- Nav Item - Messages -->
-
-
-                        <div class="topbar-divider d-none d-sm-block"></div>
-
-                        <!-- Nav Item - User Information -->
-                        <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline  small"  style="color: #000000">{{ auth()->user()->name }}</span>
-                                <img class="img-profile rounded-circle"
-                                    src="{{ auth()->user()->avatar }}">
-                            </a>
-                            <!-- Dropdown - User Information -->
-                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
-                                aria-labelledby="userDropdown">
-                                <a class="dropdown-item" href="profile">
-                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Perfil
-                                </a>
-
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
-                                    Cerrar sesion
-                                </a>
-                            </div>
-                        </li>
-
-                    </ul>
-
-                </nav>
-                <!-- End of Topbar -->
 
                 <!-- Begin Page Content -->
                 <div class="container-fluid tablasGPC">
@@ -129,8 +114,50 @@
 
                         <div class="card-body">
                             <div class="table-responsive">
+                            
+                            
+                                <!-- DataTales Example -->
+<div class="card shadow mb-4">
+    <div class="card-body">
+        <div class="table-responsive">
+            @hasSection('contenido')
+                @yield('contenido')
+            @else
+            <div class="contenedor-vendedor">
+    <div class="card-vendedor">
+        <img src="{{ asset('image/1.jpeg') }}" alt="Clientes">
+        <h3>Clientes</h3>
+        <p>Gestiona clientes potenciales, crea, actualiza y elimina registros fácilmente.</p>
+        
+        <a href="/cliente" class="boton-home">Ir a Clientes</a>
+    </div>
 
-                                @yield('contenido')
+    <div class="card-vendedor">
+        <img src="{{ asset('image/2.jpeg') }}" alt="Productos">
+        <h3>Productos</h3>
+        <p>Visualiza los productos disponibles y sugiere nuevos al administrador.</p>
+        <a href="/producto" class="boton-home">Ir a Productos</a>
+    </div>
+
+    <div class="card-vendedor">
+        <img src="{{ asset('image/3.jpeg') }}" alt="Guiones de Ventas">
+        <h3>Guiones de Ventas</h3>
+        <p>Consulta los guiones disponibles y sugiere actualizaciones al administrador.</p>
+        <a href="/guion" class="boton-home">Ir a Guiones</a>
+    </div>
+
+    <div class="card-vendedor">
+        <img src="{{ asset('image/4.jpeg') }}" alt="Atenciones">
+        <h3>Atenciones</h3>
+        <p>Crea y gestiona atenciones con clientes potenciales y asocia productos y guiones.</p>
+        <a href="/atencion" class="boton-home">Ir a Atenciones</a>
+    </div>
+</div>
+            @endif
+        </div>
+    </div>
+</div>
+
                                 
 
                             </div>

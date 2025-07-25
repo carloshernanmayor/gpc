@@ -17,37 +17,29 @@
 </div></div>
 <div class="row">
 <div class="table-responsive">
-<table class="table table-striped table-hover">
-<thead>
-   
-<th>nombre</th>
-<th>tipo</th>
-<th>material</th>
-<th>sector</th>
-<th>dimensiones</th>
-<th>fecha de creacion</th>
+<div class="container">
+  <div class="row">
+    @foreach($posproducto as $pos)
+      <div class="col-md-4">
+        <div class="card mb-3">
+          <div class="card-body">
+            <h5 class="card-title">{{ $pos->nombre }}</h5>
+            <p class="card-text"><strong>Tipo:</strong> {{ $pos->tipo }}</p>
+            <p class="card-text"><strong>Material:</strong> {{ $pos->material }}</p>
+            <p class="card-text"><strong>Sector:</strong> {{ $pos->sector }}</p>
+            <p class="card-text"><strong>Dimensiones:</strong> {{ $pos->dimensiones }}</p>
+            <p class="card-text"><strong>Fecha de creación:</strong> {{ $pos->fecha_creacion }}</p>
+            <div class="d-flex justify-content-between">
+              <a href="{{ URL::action('App\Http\Controllers\productoController@edit', $pos->id_producto) }}" class="btn btn-primary">Actualizar</a>
+              <a href="#" data-toggle="modal" data-target="#modal-delete-{{$pos->id_producto}}" class="btn btn-danger">Eliminar</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    @include('producto.modal')
+    @endforeach
+  </div>
+</div>
 
-
-
-</thead>
-<tbody>
-@foreach($posproducto as $pos)
-<tr>
-<td>{{ $pos->nombre }}</td>
-<td>{{ $pos->tipo}}</td>
-<td>{{ $pos->material }}</td>
-<td>{{ $pos->sector}}</td>
-<td>{{ $pos->dimensiones }}</td>
-<td>{{ $pos->fecha_creacion}}</td>
-<td>
-<a href="{{URL::action('App\Http\Controllers\productoController@edit',$pos->id_producto)}}"><button class="btn btn-primary">Actualizar</button></a>
-<a href="" data-toggle="modal" data-target="#modal-delete-{{$pos->id_producto}}">
-<button type="button" class="btn btn-danger"> Eliminar</button>
-</a>
-</td>
-</tr>
-@include('producto.modal')
-@endforeach
-</tbody> </table>
 </div></div>
 @endsection('contenido')

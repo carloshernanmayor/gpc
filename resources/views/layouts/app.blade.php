@@ -13,21 +13,23 @@
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Candal&display=swap" rel="stylesheet">
 
     <!-- Styles -->
         <link href="{{ asset('css/sb-admin-2.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/gpc.css') }}" rel="stylesheet">
     <link rel="stylesheet"href="{{public_path('css/sb-admin-2.min.css')}}">
+    <link rel="icon" href="{{ asset('image/logo.svg') }}">
 </head>
 <body>
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
+            <div class="container justify-content-center">
                 <a class="navbar-brand" >
                 <div >
-                    <img src= "{{ asset('image/acuerdo (2).png') }}" alt="gpc" width="50" height="50" style="margin:10px">
+                    <img src= "{{ asset('image/logo.svg') }}" alt="gpc" width="150" height="150" >
                 </div>
                 </a>
 
