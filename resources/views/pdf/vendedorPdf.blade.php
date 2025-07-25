@@ -4,6 +4,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet"href="{{public_path('/css/sb-admin-2.min.css')}}">
     <title>Document</title>
+    <link rel="icon" href="{{ asset('image/logo.svg') }}">
+    
 </head>
 <body>
     <h3>Vendedores</h3>

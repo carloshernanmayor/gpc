@@ -23,9 +23,8 @@
       <div class="col-md-4 mb-3">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">{{ $atencion->vendedor->nombre }}</h5>
             <p class="card-text"><strong>Cliente:</strong> {{ $atencion->cliente->nombre }}</p>
-            <p class="card-text"><strong>Producto:</strong> {{ $atencion->producto->nombre ?? 'Ninguno' }}</p>
+            <p class="card-text"><strong>Producto de interes:</strong> {{ $atencion->producto->nombre ?? 'Ninguno' }}</p>
             <p class="card-text"><strong>Canal:</strong> {{ $atencion->guion->canal ?? 'Ninguno' }}</p>
             <p class="card-text"><strong>Mensaje:</strong> {{ $atencion->guion->mensaje ?? 'Ninguno' }}</p>
             <p class="card-text"><strong>Resultado:</strong> {{ $atencion->resultado }}</p>
