@@ -22,7 +22,7 @@
      </a>
 
      <a href="{{url('imprimircliente')}}" class="pull-right">
-       <button class="btn btn-success">Imprimir Pdf</button>
+       <button class="btn btn-success">Generar Pdf</button>
      </a> 
   </div>
 </div>

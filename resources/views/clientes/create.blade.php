@@ -19,7 +19,7 @@
 <label for="tipo">Tipo</label>
 <input type="text" name="tipo"
 id="tipo" class="form-control"
-placeholder="Digite el tipo de cliente">
+placeholder="Natural o juridica">
 </div>
 </div>
 <div class="col-lg-4 col-md-9 col-sm-6 col-xs-12">
