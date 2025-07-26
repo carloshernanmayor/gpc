@@ -59,8 +59,28 @@ class AtencionController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
+    public function store(Request $request){
+        $request->validate([
+    'cliente' => 'required|exists:cliente,id_cliente',
+    'producto' => 'required|exists:producto,id_producto',
+    'guion' => 'required|exists:guion,id_guion',
+    'resultado' => 'required|string|in:pendiente,exitoso,no interesado',
+    'obser' => 'nullable|string|max:1000',
+], [
+    'cliente.required' => 'Debes seleccionar un cliente.',
+    'cliente.exists' => 'El cliente seleccionado no es válido.',
+
+    'producto.required' => 'Debes seleccionar un producto.',
+    'producto.exists' => 'El producto seleccionado no es válido.',
+
+    'guion.required' => 'Debes seleccionar un guion.',
+    'guion.exists' => 'El guion seleccionado no es válido.',
+
+    'resultado.required' => 'El campo resultado es obligatorio.',
+    'resultado.in' => 'El resultado debe ser: pendiente, exitoso o no interesado.',
+
+    'obser.max' => 'Las observaciones no deben superar los 1000 caracteres.',
+]);
         $nueva=new Atencion();
         $nueva->id_cliente=$request->get('cliente');
         $nueva->id_vendedor=auth()->user()->id_vendedor;
@@ -69,8 +89,8 @@ class AtencionController extends Controller
         $nueva->resultado=$request->get('resultado');
         $nueva->observaciones=$request->get('obser');   
         $nueva->save(); 
-        return Redirect::to('atencion'); 
-     
+        return Redirect::to('atencion')->with('success', 'Atencion creada exitosamente.');
+
     }
 
     /**
@@ -123,8 +143,28 @@ class AtencionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
+    public function update(Request $request, $id){
+        $request->validate([
+    'cliente' => 'required|exists:cliente,id_cliente',
+    'producto' => 'required|exists:producto,id_producto',
+    'guion' => 'required|exists:guion,id_guion',
+    'resultado' => 'required|string|in:pendiente,exitoso,no interesado',
+    'obser' => 'nullable|string|max:1000',
+], [
+    'cliente.required' => 'Debes seleccionar un cliente.',
+    'cliente.exists' => 'El cliente seleccionado no es válido.',
+
+    'producto.required' => 'Debes seleccionar un producto.',
+    'producto.exists' => 'El producto seleccionado no es válido.',
+
+    'guion.required' => 'Debes seleccionar un guion.',
+    'guion.exists' => 'El guion seleccionado no es válido.',
+
+    'resultado.required' => 'El campo resultado es obligatorio.',
+    'resultado.in' => 'El resultado debe ser: pendiente, exitoso o no interesado.',
+
+    'obser.max' => 'Las observaciones no deben superar los 1000 caracteres.',
+]);
         $atencion=Atencion::findOrFail($id);
         $atencion->id_cliente=$request->get('cliente');
         $atencion->id_vendedor=auth()->user()->id_vendedor;
@@ -134,9 +174,10 @@ class AtencionController extends Controller
         $atencion->resultado=$request->get('resultado');
         $atencion->observaciones=$request->get('obser');
         $atencion->update();
-        return Redirect::to('atencion');
-    }
+        return Redirect::to('atencion')->with('success', 'Atencion actualizada exitosamente.');
 
+    }
+    
     /**
      * Remove the specified resource from storage.
      *

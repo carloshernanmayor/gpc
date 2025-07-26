@@ -118,7 +118,7 @@ return view('clientes.index', compact('clientes'));
         $nuevaatencion->save();  
     }
 
-    return Redirect::to('cliente')->with('success', 'Cliente creado exitosamente.');
+    return Redirect::to('cliente')->with('success', 'Cliente creado exitosamente y se creo una nueva atencion con este cliente');
 }
 
 

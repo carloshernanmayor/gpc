@@ -3,15 +3,16 @@
 
 <div class="row">
 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
-<h4>Ingresar cliente</h4>
-@if (count($errors)>0)
-<div class="alert alert-danger">
-<ul>
-@foreach ($errors->all() as $error)
-<li>{{$error}}</li>
-@endforeach
-</ul>
-</div>
+<h4>Crear Atencion</h4>
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <strong>¡Ups!</strong> Hay errores con los datos que intentas ingresar:
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
 @endif
 </div>
 </div>
