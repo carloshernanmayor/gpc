@@ -12,9 +12,17 @@ use pdf;
 
 class PdfController extends Controller
 {
-    public function imprimirCliente(Request $request)
+    public function imprimirClienteAdmin(Request $request)
 {
 $cliente=cliente::orderBy('id_cliente','ASC')->get();
+$pdf = \PDF::loadView('pdf.clientePDF',['cliente' => $cliente ]);
+$pdf->setPaper('carta', 'A4');
+return $pdf->stream();
+}
+
+public function imprimirCliente(Request $request){
+$atend = Atencion::where('id_vendedor', auth()->user()->id_vendedor)->pluck('id_cliente'); 
+$cliente =cliente::whereIn('id_cliente', $atend)->orderBy('id_cliente', 'ASC')->get();
 $pdf = \PDF::loadView('pdf.clientePDF',['cliente' => $cliente ]);
 $pdf->setPaper('carta', 'A4');
 return $pdf->stream();

@@ -23,6 +23,7 @@ Route::get('/', function () {
 
 
 Route::get('imprimircliente','App\Http\Controllers\PdfController@imprimirCliente')->name('id_cliente')->middleware('auth');
+Route::get('imprimirclienteadmin','App\Http\Controllers\PdfController@imprimirClienteAdmin')->name('id_cliente')->middleware('auth');
 Route::get('imprimirvendedor','App\Http\Controllers\PdfController@imprimirVendedor')->name('id_vendedor')->middleware('auth');
 Route::get('imprimirproducto','App\Http\Controllers\PdfController@imprimirProducto')->name('id_producto')->middleware('auth');
 Route::get('imprimirguion','App\Http\Controllers\PdfController@imprimirGuion')->name('id_guion')->middleware('auth');

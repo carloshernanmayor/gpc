@@ -8,7 +8,7 @@
 
 <div class="row">
   <div class="col-md-9">
-    <a href="{{ url('imprimircliente') }}" class="pull-right">
+    <a href="{{ url('imprimirclienteadmin') }}" class="pull-right">
       <button class="btn btn-success">Imprimir Pdf</button>
     </a>
   </div>

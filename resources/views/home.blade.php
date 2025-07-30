@@ -76,7 +76,7 @@
 
             <a class="nav-link botonGPC text-center" href="/Final_proyect/gpc/public/atencionadmin" style="color: #000000">
                 <img src="{{ asset('image/marketing.png') }}" alt="marketing" width="70" height="70">
-                <p><span>Tus atenciones</span></p>
+                <p><span>Atenciones</span></p>
             </a>
         </div>
     </div>

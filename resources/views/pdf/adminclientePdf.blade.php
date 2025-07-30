@@ -22,8 +22,7 @@
 </thead>
 <tbody>
 @foreach($cliente as $c)
-<tr>
-<td>{{ $c->nombre }}</td>
+<tr><td>{{ $c->nombre }}</td>
 <td>{{ $c->identificacion}}</td>
 <td>{{ $c->telefono }}</td>
 <td>{{ $c->direccion}}</td>
